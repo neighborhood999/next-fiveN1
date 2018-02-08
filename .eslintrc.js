@@ -1,0 +1,19 @@
+module.exports = {
+  parser: 'babel-eslint',
+  env: {
+    browser: true,
+    node: true,
+    es6: true
+  },
+  extends: ['prettier', 'prettier/react'],
+  plugins: ['prettier'],
+  rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        bracketSpacing: true,
+        singleQuote: true
+      }
+    ]
+  }
+};
