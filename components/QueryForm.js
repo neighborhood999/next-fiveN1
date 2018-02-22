@@ -1,8 +1,10 @@
 import { withFormik } from 'formik';
 import isObject from 'lodash.isobject';
 import BaseForm from './BaseForm';
+import { schema } from '../helper';
 
 const enhanceForm = withFormik({
+  displayName: 'BaseForm',
   mapPropsToValues: props => ({
     urlJump: { label: '台北市', value: 1 },
     kind: { label: '不限', value: 0 },
@@ -16,6 +18,7 @@ const enhanceForm = withFormik({
     area: '',
     order: { label: 'Post Time', value: 'posttime' }
   }),
+  validationSchema: schema,
   handleSubmit: async (values, { props, setSubmitting }) => {
     const valueEntries = Object.entries(values);
     const queryParameters = valueEntries.reduce((query, obj) => {
@@ -33,8 +36,7 @@ const enhanceForm = withFormik({
       return { ...query };
     }, {});
     console.log(queryParameters);
-  },
-  displayName: 'BaseForm'
+  }
 });
 
 export default enhanceForm(BaseForm);

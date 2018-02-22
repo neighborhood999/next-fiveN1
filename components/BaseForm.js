@@ -1,5 +1,6 @@
 import React from 'react';
-import Select, { Creatable } from 'react-select';
+import { Creatable } from 'react-select';
+import { Select, sectionListOptionsHelper } from '../helper';
 import {
   urlJumpOptions,
   sectionListOptions,
@@ -51,7 +52,7 @@ const BaseForm = ({
           placeholder="請選擇"
           onChange={value => setFieldValue('section', value)}
           onBlur={value => setFieldTouched('section', true)}
-          options={sectionListOptions[values.urlJump.value - 1]['section']}
+          options={sectionListOptionsHelper(values)}
           value={values.section}
           multi
         />
