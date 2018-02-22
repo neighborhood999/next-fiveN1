@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, Creatable } from 'react-select';
+import Select, { Creatable } from 'react-select';
 import {
   urlJumpOptions,
   sectionListOptions,
@@ -10,7 +10,7 @@ import {
   hasImageOptions,
   notCoverOptions,
   roleOptions
-} from './options';
+} from '../helper/options';
 
 const BaseForm = ({
   values,
