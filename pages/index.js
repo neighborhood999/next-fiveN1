@@ -1,1 +1,9 @@
-export default () => <h1>Next.js</h1>;
+import Head from '../components/Head';
+import App from '../components/App';
+
+export default () => (
+  <div>
+    <Head />
+    <App />
+  </div>
+);
