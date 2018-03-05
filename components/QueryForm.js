@@ -1,7 +1,7 @@
 import { withFormik } from 'formik';
 import isObject from 'lodash.isobject';
 import BaseForm from './BaseForm';
-import { schema } from '../helper';
+import { schema } from '../utils';
 
 const enhanceForm = withFormik({
   displayName: 'BaseForm',
