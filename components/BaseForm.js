@@ -168,10 +168,12 @@ const BaseForm = ({
           value={values.area}
         />
       </div>
+      <div className="form-group">
+        <button type="submit" className="btn btn-primary">
+          查詢
+        </button>
+      </div>
     </div>
-    <button type="submit" className="btn btn-primary">
-      查詢
-    </button>
   </form>
 );
 
