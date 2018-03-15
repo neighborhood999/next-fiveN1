@@ -1,6 +1,6 @@
 import React from 'react';
 import { Creatable } from 'react-select';
-import { Select, sectionListOptionsHelper } from '../helper';
+import { Select, sectionListOptionsHelper } from '../utils';
 import {
   urlJumpOptions,
   sectionListOptions,
@@ -11,7 +11,7 @@ import {
   hasImageOptions,
   notCoverOptions,
   roleOptions
-} from '../helper/options';
+} from '../utils/options';
 
 const BaseForm = ({
   values,
@@ -168,10 +168,12 @@ const BaseForm = ({
           value={values.area}
         />
       </div>
+      <div className="form-group">
+        <button type="submit" className="btn btn-primary">
+          查詢
+        </button>
+      </div>
     </div>
-    <button type="submit" className="btn btn-primary">
-      查詢
-    </button>
   </form>
 );
 

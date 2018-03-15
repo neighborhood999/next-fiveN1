@@ -1,7 +1,8 @@
+import 'isomorphic-unfetch';
 import { withFormik } from 'formik';
 import isObject from 'lodash.isobject';
 import BaseForm from './BaseForm';
-import { schema } from '../helper';
+import { schema } from '../utils';
 
 const enhanceForm = withFormik({
   displayName: 'BaseForm',
@@ -35,7 +36,15 @@ const enhanceForm = withFormik({
 
       return { ...query };
     }, {});
-    console.log(queryParameters);
+
+    const url = new URL('http://localhost:8888/');
+    Object.keys(queryParameters).forEach(key =>
+      url.searchParams.append(key, queryParameters[key])
+    );
+    const body = await fetch(url).then(response => response.json());
+
+    props.updateFetchResponse(body[1]);
+    setSubmitting(false);
   }
 });
 
