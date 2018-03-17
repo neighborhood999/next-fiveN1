@@ -43,7 +43,7 @@ const enhanceForm = withFormik({
     );
     const body = await fetch(url).then(response => response.json());
 
-    props.updateFetchResponse(body[1]);
+    props.fetchResponse(body[1]);
     setSubmitting(false);
   }
 });
