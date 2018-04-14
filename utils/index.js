@@ -8,6 +8,24 @@ export const sectionListOptionsHelper = values =>
     ? sectionListOptions[values.urlJump.value - 1]['section']
     : [];
 
+export const appendParameters = parameters => {
+  const url = new URL('http://localhost:8888/');
+  Object.keys(parameters).forEach(key =>
+    url.searchParams.append(key, parameters[key])
+  );
+
+  return url;
+};
+
+export const handleResponse = response => {
+  const data = Object.entries(response);
+  if (data.length === 0) {
+    return [false, []];
+  }
+
+  return [true, data[0][1]];
+};
+
 export const schema = Yup.object().shape({
   urlJump: Yup.object().shape({
     label: Yup.string().required(),
