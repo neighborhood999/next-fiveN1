@@ -1,8 +1,8 @@
-import 'isomorphic-unfetch';
+import fetch from 'isomorphic-unfetch';
 import { withFormik } from 'formik';
 import isObject from 'lodash.isobject';
 import BaseForm from './BaseForm';
-import { schema } from '../utils';
+import { schema, appendParameters, handleResponse } from '../utils';
 
 const enhanceForm = withFormik({
   displayName: 'BaseForm',
@@ -17,7 +17,8 @@ const enhanceForm = withFormik({
     notCover: { label: 'No', value: 0 },
     role: { label: 'No', value: 0 },
     area: '',
-    order: { label: 'Post Time', value: 'posttime' }
+    order: { label: 'Post Time', value: 'posttime' },
+    firstRow: { label: 'Page', value: 0 }
   }),
   validationSchema: schema,
   handleSubmit: async (values, { props, setSubmitting }) => {
@@ -37,14 +38,16 @@ const enhanceForm = withFormik({
       return { ...query };
     }, {});
 
-    const url = new URL('http://localhost:8888/');
-    Object.keys(queryParameters).forEach(key =>
-      url.searchParams.append(key, queryParameters[key])
-    );
+    const url = appendParameters(queryParameters);
     const body = await fetch(url).then(response => response.json());
+    const [hasData, reintInfos] = handleResponse(body);
 
-    props.fetchResponse(body[1]);
-    setSubmitting(false);
+    if (hasData) {
+      props.getRentInfoList(reintInfos);
+      props.updateStatus(true);
+      props.setQueryParameters(queryParameters);
+      setSubmitting(false);
+    }
   }
 });
 

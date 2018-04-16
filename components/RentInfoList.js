@@ -33,16 +33,16 @@ const RentInfoList = ({ data }) => {
             <MapPin size={16} /> {rent[1].address}
           </CardText>
           <CardText className="card-text">
-            <DollarSign size={16} /> {rent[1].price}
+            <DollarSign size={16} /> 價格：{rent[1].price}
           </CardText>
           <CardText className="card-text">
             <Menu size={16} /> {rent[1].floor}
           </CardText>
           <CardText className="card-text">
-            <Box size={16} /> {rent[1].optionType}
+            <Box size={16} /> 類型：{rent[1].optionType}
           </CardText>
           <CardText className="card-text">
-            <Grid size={16} /> {rent[1].ping} 坪
+            <Grid size={16} /> 坪數：{rent[1].ping} 坪
           </CardText>
           <div className="float-right">
             <a className="btn btn-primary" href={rent[1].url} target="_blank">
