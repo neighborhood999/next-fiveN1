@@ -44,7 +44,7 @@ const enhanceForm = withFormik({
 
     if (hasData) {
       props.getRentInfoList(reintInfos);
-      props.updateStatus(true);
+      props.updateStatus({ more: true, isLoading: false, noMore: false });
       props.setQueryParameters(queryParameters);
       setSubmitting(false);
     }
