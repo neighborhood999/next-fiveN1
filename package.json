@@ -1,5 +1,5 @@
 {
-  "name": "next-fiveN1",
+  "name": "next-fiven1",
   "version": "0.0.0",
   "scripts": {
     "dev": "next",
@@ -20,10 +20,12 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-feather": "^1.0.8",
+    "react-md-spinner": "^0.2.5",
     "react-select": "^1.2.1",
     "react-tooltip": "^3.4.0",
     "recompose": "^0.26.0",
     "styled-components": "^3.1.6",
+    "sweetalert": "^2.1.0",
     "yup": "^0.24.1"
   },
   "devDependencies": {
