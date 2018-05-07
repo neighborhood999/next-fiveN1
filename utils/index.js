@@ -9,10 +9,6 @@ export const sectionListOptionsHelper = values =>
     : [];
 
 export const appendParameters = parameters => {
-  const isProduction = process.env.BABEL_ENV === 'production';
-  const API_URL = isProduction
-    ? process.env.API_URL_PROD
-    : process.env.API_URL_DEV;
   const url = new URL(API_URL);
   Object.keys(parameters).forEach(key =>
     url.searchParams.append(key, parameters[key])

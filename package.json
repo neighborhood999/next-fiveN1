@@ -32,8 +32,6 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
-    "babel-plugin-inline-dotenv": "^1.1.2",
-    "babel-plugin-transform-inline-environment-variables": "^0.4.1",
     "dotenv": "^5.0.1",
     "eslint": "^4.17.0",
     "eslint-config-prettier": "^2.9.0",
@@ -43,6 +41,9 @@
     "lint-staged": "^6.1.0",
     "lodash.isobject": "^3.0.2",
     "prettier": "^1.10.2"
+  },
+  "engines": {
+    "node": "^9.8.0"
   },
   "license": "MIT"
 }

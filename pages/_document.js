@@ -16,9 +16,7 @@ export default class extends Document {
         <Head>
           <script
             async
-            src={`https://www.googletagmanager.com/gtag/js?id=${
-              process.env.TRACKING_ID
-            }`}
+            src={`https://www.googletagmanager.com/gtag/js?id=${TRACKING_ID}`}
           />
           <script
             dangerouslySetInnerHTML={{
@@ -26,7 +24,7 @@ export default class extends Document {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${process.env.TRACKING_ID}');
+            gtag('config', '${TRACKING_ID}');
           `
             }}
           />
