@@ -9,7 +9,7 @@ export const sectionListOptionsHelper = values =>
     : [];
 
 export const appendParameters = parameters => {
-  const url = new URL('http://localhost:8888/');
+  const url = new URL(API_URL);
   Object.keys(parameters).forEach(key =>
     url.searchParams.append(key, parameters[key])
   );
