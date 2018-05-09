@@ -54,7 +54,7 @@ const App = ({
   updateStatus,
   setQueryParameters
 }) => (
-  <div className="container">
+  <div className="container" style={{ 'min-height': 'calc(100vh - 20px)' }}>
     <div className="row align-items-center">
       <div className="col-md-12">
         <QueryForm

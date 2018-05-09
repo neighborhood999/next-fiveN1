@@ -82,7 +82,7 @@ export default () => (
     <meta name="theme-color" content="#ffffff" />
     <link
       rel="stylesheet"
-      href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      href="//stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
     />
     <link
       rel="stylesheet"
