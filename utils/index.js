@@ -24,6 +24,12 @@ export const handleResponse = response => {
   return [true, data[0][1]];
 };
 
+export const pageView = url => {
+  window.gtag('config', TRACKING_ID, {
+    page_location: url
+  });
+};
+
 export const schema = Yup.object().shape({
   urlJump: Yup.object().shape({
     label: Yup.string().required(),
