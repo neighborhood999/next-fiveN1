@@ -81,10 +81,9 @@ const About = ({ collapseStatus, onClick, transition }) => (
                 </p>
                 <p className="text-muted">
                   底下的 GitHub Card 連結到該 Repository，你可以根據{' '}
-                  <b>README</b> 的說明，來操作使用。
-                </p>
-                <p className="text-muted">
-                  如果你覺得不錯的話，歡迎給我一個 ⭐️作為鼓勵，謝謝！
+                  <b>README</b>{' '}
+                  的說明，來操作使用。如果你覺得不錯的話，歡迎給我一個 ⭐️
+                  作為鼓勵，謝謝！
                 </p>
                 <div
                   className="github-card"
