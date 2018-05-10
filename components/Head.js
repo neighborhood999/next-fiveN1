@@ -4,7 +4,7 @@ export default () => (
   <Head>
     <title>591 簡易租屋查詢</title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    <meta name="description" content="Quick search 591 rent information." />
+    <meta name="description" content="快速查詢 591 租屋網資訊" />
     <meta property="og:title" content="591 簡易租屋查詢" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://fiven1-quick-look.now.sh/" />
@@ -12,10 +12,7 @@ export default () => (
       property="og:image"
       content="https://raw.githubusercontent.com/neighborhood999/fiveN1-rent-scraper/master/logo/fiveN1-rent-scraper-logo.png"
     />
-    <meta
-      property="og:description"
-      content="Quick search 591 rent information."
-    />
+    <meta property="og:description" content="快速查詢 591 租屋網資訊" />
     <link
       rel="apple-touch-icon"
       sizes="57x57"
