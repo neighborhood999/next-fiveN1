@@ -2,8 +2,20 @@ import Head from 'next/head';
 
 export default () => (
   <Head>
-    <title>591 租屋查詢</title>
+    <title>591 簡易租屋查詢</title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta name="description" content="Quick search 591 rent information." />
+    <meta property="og:title" content="591 簡易租屋查詢" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fiven1-quick-look.now.sh/" />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/neighborhood999/fiveN1-rent-scraper/master/logo/fiveN1-rent-scraper-logo.png"
+    />
+    <meta
+      property="og:description"
+      content="Quick search 591 rent information."
+    />
     <link
       rel="apple-touch-icon"
       sizes="57x57"

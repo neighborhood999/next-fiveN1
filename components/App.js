@@ -12,6 +12,7 @@ import { Container } from '../utils/styledComponent';
 const enhance = compose(
   withState('data', 'getRentInfoList', []),
   withState('status', 'updateStatus', {
+    firstSubmit: false,
     more: false,
     isLoading: false,
     noMore: false
@@ -57,7 +58,7 @@ const App = ({
   setQueryParameters
 }) => (
   <Container>
-    <div className="row align-items-center">
+    <div className="row">
       <div className="col-md-12">
         <QueryForm
           getRentInfoList={getRentInfoList}
@@ -67,7 +68,13 @@ const App = ({
       </div>
     </div>
     <div className="row">
-      <RentInfoList data={data} />
+      {status.firstSubmit ? (
+        <div className="col mt-3 mb-3 text-center">
+          <MDSpinner />
+        </div>
+      ) : (
+        <RentInfoList data={data} />
+      )}
     </div>
     <div className="row">
       <div className="col-md-4 offset-md-4 pt-3 pb-3">
