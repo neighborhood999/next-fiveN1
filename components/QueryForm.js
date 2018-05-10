@@ -22,6 +22,9 @@ const enhanceForm = withFormik({
   }),
   validationSchema: schema,
   handleSubmit: async (values, { props, setSubmitting }) => {
+    props.getRentInfoList([]);
+    props.updateStatus({ ...props.status, firstSubmit: true });
+
     const valueEntries = Object.entries(values);
     const queryParameters = valueEntries.reduce((query, obj) => {
       const key = obj[0];
@@ -44,7 +47,7 @@ const enhanceForm = withFormik({
 
     if (hasData) {
       props.getRentInfoList(reintInfos);
-      props.updateStatus({ more: true, isLoading: false, noMore: false });
+      props.updateStatus({ ...props.status, firstSubmit: false, more: true });
       props.setQueryParameters(queryParameters);
       setSubmitting(false);
     }
