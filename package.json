@@ -42,8 +42,5 @@
     "lodash.isobject": "^3.0.2",
     "prettier": "^1.10.2"
   },
-  "engines": {
-    "node": "^9.8.0"
-  },
   "license": "MIT"
 }
