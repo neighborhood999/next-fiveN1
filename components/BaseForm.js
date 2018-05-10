@@ -1,6 +1,7 @@
 import React from 'react';
 import { Creatable } from 'react-select';
-import { Select, sectionListOptionsHelper } from '../utils';
+import { sectionListOptionsHelper } from '../utils';
+import { Select } from '../utils/styledComponent';
 import {
   urlJumpOptions,
   sectionListOptions,

@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import fetch from 'isomorphic-unfetch';
 import swal from 'sweetalert';
 import MDSpinner from 'react-md-spinner';
@@ -6,6 +7,7 @@ import { compose, withState, withHandlers } from 'recompose';
 import QueryForm from './QueryForm';
 import RentInfoList from './RentInfoList';
 import { appendParameters, handleResponse } from '../utils';
+import { Container } from '../utils/styledComponent';
 
 const enhance = compose(
   withState('data', 'getRentInfoList', []),
@@ -54,7 +56,7 @@ const App = ({
   updateStatus,
   setQueryParameters
 }) => (
-  <div className="container" style={{ 'min-height': 'calc(100vh - 20px)' }}>
+  <Container>
     <div className="row align-items-center">
       <div className="col-md-12">
         <QueryForm
@@ -81,7 +83,7 @@ const App = ({
           )}
       </div>
     </div>
-  </div>
+  </Container>
 );
 
 export default enhance(App);
