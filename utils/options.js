@@ -231,6 +231,10 @@ export const sectionListOptions = [
     ]
   },
   {
+    city: 'Not Exist',
+    section: []
+  },
+  {
     city: '彰化縣',
     section: [
       { label: '彰化市', value: '127' },
