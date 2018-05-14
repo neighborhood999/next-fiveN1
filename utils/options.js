@@ -29,8 +29,8 @@ export const kindOptions = [
   { label: '獨立套房', value: 2 },
   { label: '分租套房', value: 3 },
   { label: '雅房', value: 4 },
-  { label: '車位', value: 5 },
-  { label: '其他', value: 6 }
+  { label: '車位', value: 8 },
+  { label: '其他', value: 24 }
 ];
 
 export const orderTypeOptions = [
