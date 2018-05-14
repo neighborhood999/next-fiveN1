@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-unfetch';
+import swal from 'sweetalert';
 import { withFormik } from 'formik';
 import isObject from 'lodash.isobject';
 import BaseForm from './BaseForm';
@@ -49,6 +50,10 @@ const enhanceForm = withFormik({
       props.getRentInfoList(reintInfos);
       props.updateStatus({ ...props.status, firstSubmit: false, more: true });
       props.setQueryParameters(queryParameters);
+      setSubmitting(false);
+    } else {
+      swal('錯誤！', '找不到任何租屋資料！😥', 'error');
+      props.updateStatus({ ...props.status, firstSubmit: false });
       setSubmitting(false);
     }
   }
