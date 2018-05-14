@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 import ReactSelect from 'react-select';
 
-const baseContainer = ({ children }) => (
-  <div className="container">{children}</div>
+export const Container = ({ children }) => (
+  <div className="container" style={{ minHeight: 'calc(100vh - 20px)' }}>
+    {children}
+  </div>
 );
-
-export const Container = styled(baseContainer)`
-  min-height: calc(100vh - 20px);
-`;
 
 export const Select = styled(ReactSelect)`
   &.Select.error > .Select-control {
