@@ -51,18 +51,18 @@ export const sexOptions = [
 ];
 
 export const hasImageOptions = [
-  { label: 'No', value: 0 },
-  { label: 'Yes', value: 1 }
+  { label: '不限', value: '' },
+  { label: '是', value: 1 }
 ];
 
 export const notCoverOptions = [
-  { label: 'No', value: 0 },
-  { label: 'Yes', value: 1 }
+  { label: '否', value: '' },
+  { label: '是', value: 1 }
 ];
 
 export const roleOptions = [
-  { label: 'No', value: 0 },
-  { label: 'Yes', value: 1 }
+  { label: '不限', value: '' },
+  { label: '是', value: 1 }
 ];
 
 export const sectionListOptions = [
