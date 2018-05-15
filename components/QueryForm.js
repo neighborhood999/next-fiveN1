@@ -14,9 +14,9 @@ const enhanceForm = withFormik({
     orderType: { label: '由新到舊', value: 'desc' },
     rentPrice: { label: '5K - 10K', value: 2 },
     sex: { label: '不限', value: 0 },
-    hasImage: { label: 'No', value: 0 },
-    notCover: { label: 'No', value: 0 },
-    role: { label: 'No', value: 0 },
+    hasImage: { label: '不限', value: '' },
+    notCover: { label: '否', value: '' },
+    role: { label: '不限', value: '' },
     area: '',
     order: { label: 'Post Time', value: 'posttime' },
     firstRow: { label: 'Page', value: 0 }

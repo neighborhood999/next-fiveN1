@@ -55,15 +55,15 @@ export const schema = Yup.object().shape({
   }),
   hasImage: Yup.object().shape({
     label: Yup.string().required(),
-    value: Yup.number().required()
+    value: Yup.string().nullable()
   }),
   role: Yup.object().shape({
     label: Yup.string().required(),
-    value: Yup.number().required()
+    value: Yup.string().nullable()
   }),
   notCover: Yup.object().shape({
     label: Yup.string().required(),
-    value: Yup.number().required()
+    value: Yup.string().nullable()
   }),
   sex: Yup.object().shape({
     label: Yup.string().required(),

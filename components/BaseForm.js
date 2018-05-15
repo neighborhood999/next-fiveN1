@@ -113,7 +113,7 @@ const BaseForm = ({
         />
       </div>
       <div className="form-group col-md-3">
-        <label htmlFor="notCover">是否為頂樓加蓋</label>
+        <label htmlFor="notCover">排除頂樓加蓋</label>
         <Select
           id="notCover"
           className={touched.notCover && errors.notCover ? 'error' : ''}

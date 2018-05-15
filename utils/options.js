@@ -51,18 +51,18 @@ export const sexOptions = [
 ];
 
 export const hasImageOptions = [
-  { label: 'No', value: 0 },
-  { label: 'Yes', value: 1 }
+  { label: '不限', value: '' },
+  { label: '是', value: 1 }
 ];
 
 export const notCoverOptions = [
-  { label: 'No', value: 0 },
-  { label: 'Yes', value: 1 }
+  { label: '否', value: '' },
+  { label: '是', value: 1 }
 ];
 
 export const roleOptions = [
-  { label: 'No', value: 0 },
-  { label: 'Yes', value: 1 }
+  { label: '不限', value: '' },
+  { label: '是', value: 1 }
 ];
 
 export const sectionListOptions = [
@@ -378,6 +378,10 @@ export const sectionListOptions = [
     ]
   },
   {
+    city: 'Not Exist',
+    section: []
+  },
+  {
     city: '高雄市',
     section: [
       { label: '新興區', value: '243' },
@@ -423,6 +427,10 @@ export const sectionListOptions = [
     ]
   },
   {
+    city: 'Not Exist',
+    section: []
+  },
+  {
     city: '屏東縣',
     section: [
       { label: '屏東市', value: '295' },
@@ -459,6 +467,10 @@ export const sectionListOptions = [
       { label: '恆春鎮', value: '326' },
       { label: '滿州鄉', value: '327' }
     ]
+  },
+  {
+    city: 'Not Exist',
+    section: []
   },
   {
     city: '宜蘭縣',
