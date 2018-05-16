@@ -91,7 +91,7 @@ export default () => (
     <meta name="theme-color" content="#ffffff" />
     <link
       rel="stylesheet"
-      href="//stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css"
     />
     <link
       rel="stylesheet"
