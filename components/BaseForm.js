@@ -155,7 +155,7 @@ const BaseForm = ({
           options={rentPriceOptions}
         />
         <span className="float-left badge badge-warning">
-          <i>請選擇或輸入租金範圍，例如：0-10000 - 代表 0 - 10000 元</i>
+          <i>請選擇或輸入租金範圍，例如：0-5000，代表 0 ~ 5000 元</i>
         </span>
       </div>
       <div className="form-group col-md-12">
