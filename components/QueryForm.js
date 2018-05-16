@@ -3,7 +3,12 @@ import swal from 'sweetalert';
 import { withFormik } from 'formik';
 import isObject from 'lodash.isobject';
 import BaseForm from './BaseForm';
-import { schema, appendParameters, handleResponse } from '../utils';
+import {
+  schema,
+  appendParameters,
+  handleResponse,
+  handleError
+} from '../utils';
 
 const enhanceForm = withFormik({
   displayName: 'BaseForm',
@@ -43,7 +48,9 @@ const enhanceForm = withFormik({
     }, {});
 
     const url = appendParameters(queryParameters);
-    const body = await fetch(url).then(response => response.json());
+    const body = await fetch(url)
+      .then(handleError)
+      .then(response => response.json());
     const [hasData, reintInfos] = handleResponse(body);
 
     if (hasData) {
