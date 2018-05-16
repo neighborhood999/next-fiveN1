@@ -1,4 +1,5 @@
 import Yup from 'yup';
+import swal from 'sweetalert';
 import { sectionListOptions } from './options';
 
 export const sectionListOptionsHelper = values =>
@@ -22,6 +23,20 @@ export const handleResponse = response => {
   }
 
   return [true, data[0][1]];
+};
+
+export const handleError = response => {
+  const { ok, statusText } = response;
+
+  if (ok) {
+    return response;
+  } else {
+    const error = new Error(statusText);
+    error.response = response;
+    swal('Oops!', '591 租屋網目前沒有回應！😥', 'error');
+
+    return Promise.reject(error);
+  }
 };
 
 export const pageView = url => {
