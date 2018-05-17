@@ -50,8 +50,20 @@ export const schema = Yup.object().shape({
     label: Yup.string().required(),
     value: Yup.string().required()
   }),
-  section: Yup.string(),
-  area: Yup.string().nullable(),
+  section: Yup.array(
+    Yup.object().shape({
+      label: Yup.string().required(),
+      value: Yup.number().required()
+    })
+  ),
+  area: Yup.object().shape({
+    label: Yup.string().required(),
+    value: Yup.string()
+  }),
+  floor: Yup.object().shape({
+    label: Yup.string().required(),
+    value: Yup.string()
+  }),
   order: Yup.object().shape({
     label: Yup.string(),
     value: Yup.string()
@@ -83,5 +95,23 @@ export const schema = Yup.object().shape({
   sex: Yup.object().shape({
     label: Yup.string().required(),
     value: Yup.number().required()
-  })
+  }),
+  option: Yup.array(
+    Yup.object().shape({
+      label: Yup.string().required(),
+      value: Yup.string().required()
+    })
+  ),
+  other: Yup.array(
+    Yup.object().shape({
+      label: Yup.string().required(),
+      value: Yup.string().required()
+    })
+  ),
+  shape: Yup.array(
+    Yup.object().shape({
+      label: Yup.string().required(),
+      value: Yup.string().required()
+    })
+  )
 });
