@@ -11,7 +11,12 @@ import {
   sexOptions,
   hasImageOptions,
   notCoverOptions,
-  roleOptions
+  roleOptions,
+  areaOptions,
+  shapeOptions,
+  floorOptions,
+  supportOptions,
+  otherOptions
 } from '../utils/options';
 
 const BaseForm = ({
@@ -55,7 +60,7 @@ const BaseForm = ({
           onBlur={value => setFieldTouched('section', true)}
           options={sectionListOptionsHelper(values)}
           value={values.section}
-          multi
+          multi={true}
         />
       </div>
       <div className="form-group col-md-3">
@@ -136,18 +141,14 @@ const BaseForm = ({
           options={roleOptions}
         />
       </div>
-      <div className="form-group col-md-12">
+      <div className="form-group col-md-4">
         <label htmlFor="rentPrice">租金</label>
         <Creatable
           id="rentPrice"
-          className={
-            touched.rentPrice && errors.rentPrice
-              ? 'form-group error'
-              : 'form-group'
-          }
+          className="form-group"
           onChange={value =>
             value === null
-              ? setFieldValue('rentPrice', { label: '無', value: '' })
+              ? setFieldValue('rentPrice', { label: '不限', value: '' })
               : setFieldValue('rentPrice', value)
           }
           onBlur={value => setFieldTouched('rentPrice', true)}
@@ -155,18 +156,76 @@ const BaseForm = ({
           options={rentPriceOptions}
         />
         <span className="float-left badge badge-warning">
-          <i>請選擇或輸入租金範圍，例如：0-5000，代表 0 ~ 5000 元</i>
+          <i>可選擇或輸入租金範圍，例如：0-5000，代表 0 ~ 5000 元</i>
         </span>
       </div>
-      <div className="form-group col-md-12">
+      <div className="form-group col-md-4">
         <label htmlFor="area">坪數</label>
         <Creatable
           id="area"
           className="form-group"
-          placeholder="請輸入坪數範圍，例如：0-10 - 代表 0 - 10 坪"
-          onChange={value => setFieldValue('area', value)}
+          onChange={value =>
+            value === null
+              ? setFieldValue('area', { label: '不限', value: '' })
+              : setFieldValue('area', value)
+          }
           onBlur={value => setFieldTouched('area', true)}
+          options={areaOptions}
           value={values.area}
+        />
+        <span className="float-left badge badge-warning">
+          <i>可選擇或輸入坪數範圍，例如：0-10，代表 0 ~ 10 坪</i>
+        </span>
+      </div>
+      <div className="form-group col-md-4">
+        <label htmlFor="floor">樓層</label>
+        <Select
+          id="floor"
+          className={touched.floor && errors.floor ? 'error' : ''}
+          placeholder="請選擇樓層"
+          onChange={value => setFieldValue('floor', value)}
+          onBlur={value => setFieldTouched('floor', true)}
+          options={floorOptions}
+          value={values.floor}
+        />
+      </div>
+      <div className="form-group col-md-4">
+        <label htmlFor="shape">房屋類型</label>
+        <Select
+          id="shape"
+          className="form-group"
+          placeholder="請選擇房屋類型"
+          onChange={value => setFieldValue('shape', value)}
+          onBlur={value => setFieldTouched('shape', true)}
+          options={shapeOptions}
+          value={values.shape}
+          multi={true}
+        />
+      </div>
+      <div className="form-group col-md-4">
+        <label htmlFor="option">提供設備</label>
+        <Select
+          id="option"
+          className={touched.option && errors.option ? 'error' : ''}
+          placeholder="請選擇"
+          onChange={value => setFieldValue('option', value)}
+          onBlur={value => setFieldTouched('option', true)}
+          value={values.option}
+          options={supportOptions}
+          multi={true}
+        />
+      </div>
+      <div className="form-group col-md-4">
+        <label htmlFor="other">其他條件</label>
+        <Select
+          id="other"
+          className={touched.other && errors.other ? 'error' : ''}
+          placeholder="請選擇"
+          onChange={value => setFieldValue('other', value)}
+          onBlur={value => setFieldTouched('other', true)}
+          value={values.other}
+          options={otherOptions}
+          multi={true}
         />
       </div>
       <div className="form-group">
