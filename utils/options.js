@@ -39,9 +39,13 @@ export const orderTypeOptions = [
 ];
 
 export const rentPriceOptions = [
+  { label: '不限', value: '' },
   { label: '5K - 10K', value: '2' },
   { label: '10K - 20K', value: '3' },
-  { label: '20K - 30K', value: '4' }
+  { label: '20K - 30K', value: '4' },
+  { label: '30K - 40K', value: '5' },
+  { label: '40K - 60K', value: '6' },
+  { label: '60K 以上', value: '7' }
 ];
 
 export const sexOptions = [
@@ -63,6 +67,54 @@ export const notCoverOptions = [
 export const roleOptions = [
   { label: '不限', value: '' },
   { label: '是', value: 1 }
+];
+
+export const shapeOptions = [
+  { label: '公寓', value: '1' },
+  { label: '電梯大樓', value: '2' },
+  { label: '透天厝', value: '3' },
+  { label: '別墅', value: '4' }
+];
+
+export const floorOptions = [
+  { label: '不限', value: '' },
+  { label: '1 樓', value: '0,1' },
+  { label: '2 樓到 6 樓', value: '2,6' },
+  { label: '6 樓到 12 樓', value: '6,12' },
+  { label: '12 樓以上', value: '12,' }
+];
+
+export const areaOptions = [
+  { label: '不限', value: '' },
+  { label: '10 坪以下', value: '0,10' },
+  { label: '10 坪到 20 坪', value: '10,20' },
+  { label: '20 坪到 30 坪', value: '20,30' },
+  { label: '40 坪到 50 坪', value: '40,50' },
+  { label: '50 坪以上', value: '50,' }
+];
+
+export const supportOptions = [
+  { label: '電視', value: 'tv' },
+  { label: '冷氣', value: 'cold' },
+  { label: '冰箱', value: 'icebox' },
+  { label: '熱水器', value: 'hotwater' },
+  { label: '天然瓦斯', value: 'naturalgas' },
+  { label: '第四台', value: 'four' },
+  { label: '網路', value: 'broadband' },
+  { label: '洗衣機', value: 'washer' },
+  { label: '床', value: 'bed' },
+  { label: '衣櫃', value: 'wardrobe' },
+  { label: '沙發', value: 'sofa' }
+];
+
+export const otherOptions = [
+  { label: '附有車位', value: 'cartplace' },
+  { label: '附有電梯', value: 'lift' },
+  { label: '附有陽台', value: 'balcony_1' },
+  { label: '可以開伙', value: 'cook' },
+  { label: '可養寵物', value: 'pet' },
+  { label: '鄰近捷運', value: 'tragoods' },
+  { label: '可短期租賃', value: 'lease' }
 ];
 
 export const sectionListOptions = [
