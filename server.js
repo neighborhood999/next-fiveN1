@@ -27,7 +27,6 @@ function renderAndCache(ctx, pagePath, queryParams) {
 
   // If we have a page in the cache, let's serve it
   if (ssrCache.has(key)) {
-    console.log(`CACHE HIT: ${key}`);
     ctx.body = ssrCache.get(key);
 
     return Promise.resolve();
@@ -38,12 +37,10 @@ function renderAndCache(ctx, pagePath, queryParams) {
     .renderToHTML(ctx.req, ctx.res, pagePath, queryParams)
     .then(html => {
       // Let's cache this page
-      console.log(`CACHE MISS: ${key}`);
       ssrCache.set(key, html);
       ctx.body = html;
     })
     .catch(err => {
-      console.log('ERRR', err);
       return app.renderError(err, ctx.req, ctx.res, pagePath, queryParams);
     });
 }
@@ -66,6 +63,6 @@ app.prepare().then(() => {
 
   server.listen(port, err => {
     if (err) throw err;
-    console.log(`🌏 => Ready on http://localhost:${port}`);
+    console.log(`🌏  => Ready on http://localhost:${port}`);
   });
 });
