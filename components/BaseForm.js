@@ -6,7 +6,9 @@ import {
   urlJumpOptions,
   sectionListOptions,
   kindOptions,
-  orderTypeOptions,
+  orderOptions,
+  orderTypeByTimeOptions,
+  orderTypeByMoneyOptions,
   rentPriceOptions,
   sexOptions,
   hasImageOptions,
@@ -63,7 +65,7 @@ const BaseForm = ({
           multi={true}
         />
       </div>
-      <div className="form-group col-md-3">
+      <div className="form-group col-md-2">
         <label htmlFor="kind">類型</label>
         <Select
           id="kind"
@@ -77,7 +79,24 @@ const BaseForm = ({
           options={kindOptions}
         />
       </div>
-      <div className="form-group col-md-3">
+      <div className="form-group col-md-2">
+        <label htmlFor="order">依據</label>
+        <Select
+          id="order"
+          className={
+            touched.order && errors.order ? 'form-group error' : 'form-group'
+          }
+          placeholder="請選擇刊登條件"
+          onChange={value => {
+            setFieldValue('order', value);
+            setFieldValue('orderType', null);
+          }}
+          onBlur={value => setFieldTouched('order', true)}
+          value={values.order}
+          options={orderOptions}
+        />
+      </div>
+      <div className="form-group col-md-2">
         <label htmlFor="orderType">刊登順序</label>
         <Select
           id="orderType"
@@ -87,10 +106,19 @@ const BaseForm = ({
               : 'form-group'
           }
           placeholder="請選擇刊登順序"
-          onChange={value => setFieldValue('orderType', value)}
+          onChange={value => {
+            if (values.order === null) return;
+            setFieldValue('orderType', value);
+          }}
           onBlur={value => setFieldTouched('orderType', true)}
           value={values.orderType}
-          options={orderTypeOptions}
+          options={
+            values.order === null
+              ? []
+              : values.order !== null && values.order.value === 'posttime'
+                ? orderTypeByTimeOptions
+                : orderTypeByMoneyOptions
+          }
         />
       </div>
       <div className="form-group col-md-3">
