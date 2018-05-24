@@ -38,7 +38,7 @@ export const orderOptions = [
   { label: '價格', value: 'money' }
 ];
 
-export const orderTypeOptions = [
+export const orderTypeByTimeOptions = [
   { label: '由新到舊', value: 'desc' },
   { label: '由舊到新', value: 'asc' }
 ];

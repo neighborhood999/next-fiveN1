@@ -7,7 +7,7 @@ import {
   sectionListOptions,
   kindOptions,
   orderOptions,
-  orderTypeOptions,
+  orderTypeByTimeOptions,
   orderTypeByMoneyOptions,
   rentPriceOptions,
   sexOptions,
@@ -116,7 +116,7 @@ const BaseForm = ({
             values.order === null
               ? []
               : values.order !== null && values.order.value === 'posttime'
-                ? orderTypeOptions
+                ? orderTypeByTimeOptions
                 : orderTypeByMoneyOptions
           }
         />
