@@ -27,7 +27,7 @@ const enhanceForm = withFormik({
     area: { label: '不限', value: '' },
     floor: { label: '不限', value: '' },
     shape: [],
-    order: { label: 'Post Time', value: 'posttime' },
+    order: { label: '時間', value: 'posttime' },
     firstRow: { label: 'Page', value: 0 }
   }),
   validationSchema: schema,

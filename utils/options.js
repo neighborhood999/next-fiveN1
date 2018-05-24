@@ -33,9 +33,19 @@ export const kindOptions = [
   { label: '其他', value: 24 }
 ];
 
+export const orderOptions = [
+  { label: '時間', value: 'posttime' },
+  { label: '價格', value: 'money' }
+];
+
 export const orderTypeOptions = [
   { label: '由新到舊', value: 'desc' },
   { label: '由舊到新', value: 'asc' }
+];
+
+export const orderTypeByMoneyOptions = [
+  { label: '由高到低', value: 'desc' },
+  { label: '由低到高', value: 'asc' }
 ];
 
 export const rentPriceOptions = [
