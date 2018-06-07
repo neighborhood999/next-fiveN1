@@ -1,4 +1,4 @@
-import Yup from 'yup';
+import * as yup from 'yup';
 import swal from 'sweetalert';
 import { sectionListOptions } from './options';
 
@@ -45,73 +45,73 @@ export const pageView = url => {
   });
 };
 
-export const schema = Yup.object().shape({
-  urlJump: Yup.object().shape({
-    label: Yup.string().required(),
-    value: Yup.string().required()
+export const schema = yup.object().shape({
+  urlJump: yup.object().shape({
+    label: yup.string().required(),
+    value: yup.string().required()
   }),
-  section: Yup.array(
-    Yup.object().shape({
-      label: Yup.string().required(),
-      value: Yup.number().required()
+  section: yup.array(
+    yup.object().shape({
+      label: yup.string().required(),
+      value: yup.number().required()
     })
   ),
-  area: Yup.object().shape({
-    label: Yup.string().required(),
-    value: Yup.string()
+  area: yup.object().shape({
+    label: yup.string().required(),
+    value: yup.string()
   }),
-  floor: Yup.object().shape({
-    label: Yup.string().required(),
-    value: Yup.string()
+  floor: yup.object().shape({
+    label: yup.string().required(),
+    value: yup.string()
   }),
-  order: Yup.object().shape({
-    label: Yup.string(),
-    value: Yup.string()
+  order: yup.object().shape({
+    label: yup.string(),
+    value: yup.string()
   }),
-  rentPrice: Yup.object().shape({
-    label: Yup.string().required(),
-    value: Yup.string()
+  rentPrice: yup.object().shape({
+    label: yup.string().required(),
+    value: yup.string()
   }),
-  orderType: Yup.object().shape({
-    label: Yup.string().required(),
-    value: Yup.string().required()
+  orderType: yup.object().shape({
+    label: yup.string().required(),
+    value: yup.string().required()
   }),
-  kind: Yup.object().shape({
-    label: Yup.string().required(),
-    value: Yup.number().required()
+  kind: yup.object().shape({
+    label: yup.string().required(),
+    value: yup.number().required()
   }),
-  hasImage: Yup.object().shape({
-    label: Yup.string().required(),
-    value: Yup.string().nullable()
+  hasImage: yup.object().shape({
+    label: yup.string().required(),
+    value: yup.string().nullable()
   }),
-  role: Yup.object().shape({
-    label: Yup.string().required(),
-    value: Yup.string().nullable()
+  role: yup.object().shape({
+    label: yup.string().required(),
+    value: yup.string().nullable()
   }),
-  notCover: Yup.object().shape({
-    label: Yup.string().required(),
-    value: Yup.string().nullable()
+  notCover: yup.object().shape({
+    label: yup.string().required(),
+    value: yup.string().nullable()
   }),
-  sex: Yup.object().shape({
-    label: Yup.string().required(),
-    value: Yup.number().required()
+  sex: yup.object().shape({
+    label: yup.string().required(),
+    value: yup.number().required()
   }),
-  option: Yup.array(
-    Yup.object().shape({
-      label: Yup.string().required(),
-      value: Yup.string().required()
+  option: yup.array(
+    yup.object().shape({
+      label: yup.string().required(),
+      value: yup.string().required()
     })
   ),
-  other: Yup.array(
-    Yup.object().shape({
-      label: Yup.string().required(),
-      value: Yup.string().required()
+  other: yup.array(
+    yup.object().shape({
+      label: yup.string().required(),
+      value: yup.string().required()
     })
   ),
-  shape: Yup.array(
-    Yup.object().shape({
-      label: Yup.string().required(),
-      value: Yup.string().required()
+  shape: yup.array(
+    yup.object().shape({
+      label: yup.string().required(),
+      value: yup.string().required()
     })
   )
 });
