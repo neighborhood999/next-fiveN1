@@ -6,6 +6,7 @@
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "lint": "eslint components pages helper",
+    "lint-fix": "eslint --fix components pages helper",
     "precommit": "lint-staged"
   },
   "author": "Peng Jie <bivinity.pengzjie@gmail.com> (https://github.com/neighborhood999)",
