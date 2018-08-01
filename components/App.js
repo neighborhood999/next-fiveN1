@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import fetch from 'isomorphic-unfetch';
 import swal from 'sweetalert';
 import MDSpinner from 'react-md-spinner';

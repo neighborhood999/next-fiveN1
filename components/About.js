@@ -47,7 +47,8 @@ const About = ({ collapseStatus, onClick, transition }) => (
               <img src="/static/mail.svg" width="25" height="25" />{' '}
               <a href="mailto:bivinity.pengzjie@gmail.com">
                 bivinity.pengzjie@gmail.com
-              </a>，謝謝！
+              </a>
+              ，謝謝！
             </p>
             <hr />
             <p>
@@ -83,10 +84,8 @@ const About = ({ collapseStatus, onClick, transition }) => (
                     src="https://png.icons8.com/windows/96/000000/console.png"
                   />{' '}
                   Terminal
-                  執行後，得到一些簡易的文字資料，再選擇我感興趣的資料前往查詢，<mark
-                  >
-                    本站就是基於這個軟體開發而成的
-                  </mark>。
+                  執行後，得到一些簡易的文字資料，再選擇我感興趣的資料前往查詢，
+                  <mark>本站就是基於這個軟體開發而成的</mark>。
                 </p>
                 <p className="text-muted">
                   底下的 GitHub Card 連結到該 Repository，你可以根據{' '}
