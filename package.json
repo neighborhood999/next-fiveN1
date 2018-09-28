@@ -1,6 +1,11 @@
 {
   "name": "next-fiven1",
   "version": "0.0.0",
+  "bin": "server.js",
+  "pkg": {
+    "assets": ".next/**/*",
+    "scripts": ".next/server/**/*.js"
+  },
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
@@ -17,10 +22,12 @@
     ]
   },
   "dependencies": {
+    "dotenv": "^6.0.0",
     "formik": "^1.3.0",
     "isomorphic-unfetch": "^3.0.0",
     "koa": "^2.5.3",
     "koa-route": "^3.2.0",
+    "lodash.isobject": "^3.0.2",
     "lru-cache": "^4.1.3",
     "next": "^7.0.0",
     "react": "^16.5.2",
@@ -36,14 +43,12 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
-    "dotenv": "^6.0.0",
     "eslint": "^4.19.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.9.1",
     "husky": "^0.14.3",
     "lint-staged": "^7.3.0",
-    "lodash.isobject": "^3.0.2",
     "prettier": "^1.14.2"
   },
   "engines": {
