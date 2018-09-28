@@ -8,7 +8,8 @@ COPY . .
 RUN yarn install --production --pure-lockfile --ignore-engines
 
 RUN yarn run build && \
-    npx pkg@4.3.1 . --targets node9-alpine-x64 --out-path pkg
+    yarn add pkg@4.3.1 -D && \
+    yarn run pkg
 
 # FINAL STAGE
 FROM alpine:3.7
