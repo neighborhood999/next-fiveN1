@@ -77,16 +77,15 @@ const App = ({
     </div>
     <div className="row">
       <div className="col-md-4 offset-md-4 pt-3 pb-3">
-        {!status.noMore &&
-          status.more && (
-            <button
-              type="button"
-              className="btn btn-light btn-block"
-              onClick={fetchMore}
-            >
-              {status.isLoading ? <MDSpinner /> : '載入更多房屋資訊'}
-            </button>
-          )}
+        {!status.noMore && status.more && (
+          <button
+            type="button"
+            className="btn btn-light btn-block"
+            onClick={fetchMore}
+          >
+            {status.isLoading ? <MDSpinner /> : '載入更多房屋資訊'}
+          </button>
+        )}
       </div>
     </div>
   </Container>
