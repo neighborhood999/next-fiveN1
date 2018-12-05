@@ -43,8 +43,8 @@ const enhanceForm = withFormik({
       const option = isObject(optionValue[0])
         ? optionValue.map(o => o.value)
         : optionValue[1] === undefined
-          ? ''
-          : optionValue[1].toString().replace(/-/, ',');
+        ? ''
+        : optionValue[1].toString().replace(/-/, ',');
 
       query[key] = Array.isArray(option) ? ''.concat(option) : option;
 

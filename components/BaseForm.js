@@ -116,8 +116,8 @@ const BaseForm = ({
             values.order === null
               ? []
               : values.order !== null && values.order.value === 'posttime'
-                ? orderTypeByTimeOptions
-                : orderTypeByMoneyOptions
+              ? orderTypeByTimeOptions
+              : orderTypeByMoneyOptions
           }
         />
       </div>
