@@ -1,7 +1,6 @@
 {
   "name": "next-fiven1",
   "version": "0.0.0",
-  "index": "server.js",
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
