@@ -2,6 +2,7 @@
   "name": "next-fiven1",
   "version": 2,
   "builds": [
-    { "src": "server.js", "use": "@now/node" }
+    { "src": "server.js", "use": "@now/node" },
+    { "src": "next.config.js", "use": "@now/next" }
   ]
 }
