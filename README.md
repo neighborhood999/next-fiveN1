@@ -38,3 +38,5 @@ $ make run
 Open `http://localhost:3000` in your browser.
 
 ## LICENSE
+
+MIT © [Peng Jie](https://github.com/neighborhood999)
