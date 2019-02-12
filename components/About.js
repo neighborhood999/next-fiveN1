@@ -4,6 +4,7 @@ import { Container } from '../utils/styledComponent';
 
 function About() {
   const [collapseStatus, setCollapseStatus] = useState(false);
+
   return (
     <Container>
       <div className="row">

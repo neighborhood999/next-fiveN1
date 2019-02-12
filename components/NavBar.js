@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 function NavBar() {
   const [collapseStatus, setCollapseStatus] = useState(false);
+
   return (
     <nav
       className="navbar navbar-expand-lg navbar-dark bg-dark"
