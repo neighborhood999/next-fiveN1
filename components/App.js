@@ -16,6 +16,26 @@ function App() {
     isLoading: false,
     noMore: false
   });
+  const fetchMore = async () => {
+    setStatus({ ...status, isLoading: true });
+
+    const updateQueryParameters = {
+      ...queryParameters,
+      firstRow: parseInt(queryParameters.firstRow) + 30
+    };
+    const url = appendParameters(updateQueryParameters);
+    const nextPage = await fetch(url).then(response => response.json());
+    const [hasData, rentInfos] = handleResponse(nextPage);
+
+    if (hasData) {
+      setData([...data, ...rentInfos]);
+      setQueryParameters(updateQueryParameters);
+      setStatus({ ...status, isLoading: false });
+    } else {
+      swal('糟糕！', '沒有更多租屋資料了 😭', 'error');
+      setStatus({ ...status, isLoading: false, noMore: true });
+    }
+  };
 
   return (
     <Container>
@@ -43,28 +63,7 @@ function App() {
             <button
               type="button"
               className="btn btn-light btn-block"
-              onClick={async () => {
-                setStatus({ ...status, isLoading: true });
-
-                const updateQueryParameters = {
-                  ...queryParameters,
-                  firstRow: parseInt(queryParameters.firstRow) + 30
-                };
-                const url = appendParameters(updateQueryParameters);
-                const nextPage = await fetch(url).then(response =>
-                  response.json()
-                );
-                const [hasData, rentInfos] = handleResponse(nextPage);
-
-                if (hasData) {
-                  setData([...data, ...rentInfos]);
-                  setQueryParameters(updateQueryParameters);
-                  setStatus({ ...status, isLoading: false });
-                } else {
-                  swal('Oops！', '沒有更多租屋資料了 😭！', 'error');
-                  setStatus({ ...status, isLoading: false, noMore: true });
-                }
-              }}
+              onClick={fetchMore}
             >
               {status.isLoading ? <MDSpinner /> : '載入更多房屋資訊'}
             </button>
