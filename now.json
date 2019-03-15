@@ -1,4 +1,8 @@
 {
-  "version": 1,
-  "type": "docker"
+  "version": 2,
+  "name": "upgrade-v2-fiven1-quick-look",
+  "builds": [
+    { "src": "package.json", "use": "@now/next" }
+  ],
+  "regions": ["hnd1"]
 }
