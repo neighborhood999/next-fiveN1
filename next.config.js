@@ -10,6 +10,7 @@ const TRACKING_ID = process.env.TRACKING_ID;
 const API_URL = isProduction ? API_URL_PROD : API_URL_DEV;
 
 module.exports = {
+  target: 'serverless',
   webpack: config => {
     config.plugins.push(
       new DefinePlugin({
