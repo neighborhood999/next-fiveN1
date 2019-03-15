@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "upgrade-v2-fiven1-quick-look",
+  "name": "next-fiveN1",
   "builds": [
     { "src": "package.json", "use": "@now/next" }
   ],
