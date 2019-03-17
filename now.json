@@ -4,5 +4,13 @@
   "builds": [
     { "src": "package.json", "use": "@now/next" }
   ],
+  "routes": [
+    {
+      "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+",
+      "headers": {
+        "cache-control": "immutable"
+      }
+    }
+  ],
   "regions": ["hnd1"]
 }
