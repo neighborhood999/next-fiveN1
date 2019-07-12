@@ -1,7 +1,7 @@
 # next-fiveN1
-![next.js](https://flat.badgen.net/badge/zeit/next.js/black)
-![hosted on now](https://flat.badgen.net/badge/hosted%20on/now/black)
-![docker](https://flat.badgen.net/badge//docker?icon=docker)
+
+![hosted on now](https://flat.badgen.net/badge/icon/now?icon=now&label&color=black)
+![docker](https://flat.badgen.net/badge/icon/docker?icon=docker&label&color=black)
 
 The [fiven1-quick-look.now.sh](https://fiven1-quick-look.now.sh/) source code.
 
