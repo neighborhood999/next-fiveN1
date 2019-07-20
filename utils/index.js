@@ -8,7 +8,8 @@ export const sectionListOptionsHelper = values =>
     : [];
 
 export const appendParameters = parameters => {
-  const url = new URL(API_URL);
+  const url = new URL(process.env.API_URL);
+
   Object.keys(parameters).forEach(key =>
     url.searchParams.append(key, parameters[key])
   );
@@ -39,11 +40,10 @@ export const handleError = response => {
   }
 };
 
-export const pageView = url => {
-  window.gtag('config', TRACKING_ID, {
+export const pageView = url =>
+  window.gtag('config', process.env.TRACKING_ID, {
     page_location: url
   });
-};
 
 export const schema = yup.object().shape({
   urlJump: yup.object().shape({
