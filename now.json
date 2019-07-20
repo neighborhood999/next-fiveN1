@@ -12,5 +12,11 @@
       }
     }
   ],
+  "build": {
+    "env": {
+      "API_URL": "@fiven1-api",
+      "TRACKING_ID": "@fiven1-ga"
+    }
+  },
   "regions": ["hnd1"]
 }
