@@ -1,8 +1,5 @@
 # next-fiveN1
 
-![hosted on now](https://flat.badgen.net/badge/icon/now?icon=now&label&color=black)
-![docker](https://flat.badgen.net/badge/icon/docker?icon=docker&label&color=black)
-
 The [fiven1-quick-look.now.sh](https://fiven1-quick-look.now.sh/) source code.
 
 ## Installation
