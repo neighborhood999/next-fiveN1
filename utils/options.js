@@ -348,7 +348,10 @@ export const sectionListOptions = [
   },
   {
     city: '嘉義市',
-    section: [{ label: '西區', value: '373' }, { label: '東區', value: '374' }]
+    section: [
+      { label: '西區', value: '373' },
+      { label: '東區', value: '374' }
+    ]
   },
   {
     city: '嘉義縣',
