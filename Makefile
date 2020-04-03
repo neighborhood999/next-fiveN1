@@ -3,6 +3,10 @@ PORT := 3000
 .PHONY: all
 all: build clean
 
+.PHONY: dev
+dev:
+	@yarn run dev
+
 .PHONY: build
 build:
 	docker build -t next-fiven1 .
