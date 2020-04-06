@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import React from 'react';
 import ReactTooltip from 'react-tooltip';
-import { Box, DollarSign, Grid, Hash, MapPin, Menu } from 'react-feather';
+import styled from 'styled-components';
+import { Box, DollarSign, Grid, MapPin, Menu } from 'react-feather';
 
 const Title = styled.h5`
   overflow: hidden;
@@ -48,7 +49,12 @@ const RentInfoList = ({ data }) => {
             {rent[1].ping} 坪
           </CardText>
           <div className="float-right">
-            <a className="btn btn-primary" href={rent[1].url} target="_blank">
+            <a
+              className="btn btn-primary"
+              href={rent[1].url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               點此前往
             </a>
           </div>

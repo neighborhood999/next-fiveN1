@@ -1,11 +1,5 @@
-import * as yup from 'yup';
 import swal from 'sweetalert';
-import { sectionListOptions } from './options';
-
-export const sectionListOptionsHelper = values =>
-  values.urlJump !== null
-    ? sectionListOptions[values.urlJump.value - 1]['section']
-    : [];
+import * as yup from 'yup';
 
 export const appendParameters = parameters => {
   const url = new URL(process.env.API_URL);
@@ -20,10 +14,16 @@ export const appendParameters = parameters => {
 export const handleResponse = response => {
   const data = Object.entries(response);
   if (data.length === 0) {
-    return [false, []];
+    return {
+      hasData: false,
+      data: []
+    };
   }
 
-  return [true, data[0][1]];
+  return {
+    hasData: true,
+    data: data[0][1]
+  };
 };
 
 export const handleError = response => {
@@ -45,7 +45,7 @@ export const pageView = url =>
     page_location: url
   });
 
-export const schema = yup.object().shape({
+export const validationSchema = yup.object().shape({
   urlJump: yup.object().shape({
     label: yup.string().required(),
     value: yup.string().required()

@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import Link from 'next/link';
+import React, { useState } from 'react';
 
 function NavBar() {
   const [collapseStatus, setCollapseStatus] = useState(false);

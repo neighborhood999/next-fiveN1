@@ -1,29 +1,35 @@
-import { useState } from 'react';
-import Link from 'next/link';
-import { Container } from '../utils/styledComponent';
+import React, { useState } from 'react';
 
 function About() {
   const [collapseStatus, setCollapseStatus] = useState(false);
 
   return (
-    <Container>
+    <div className="container" style={{ minHeight: 'calc(100vh - 20px)' }}>
       <div className="row">
         <div className="col">
           <div className="jumbotron">
             <div className="container">
               <h1 className="display-4 mb-3">關於本站</h1>
               <p className="lead">
-                提供更簡單友善的操作介面，快速查詢
-                <Link href="https://www.591.com.tw/">
-                  <a> 591 </a>
-                </Link>
+                提供更簡單友善的操作介面，快速查詢{' '}
+                <a
+                  href="https://www.591.com.tw/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  591
+                </a>{' '}
                 租屋網租屋資料。
               </p>
               <p className="text-muted">
                 本站所有資訊來源與版權均為{' '}
-                <Link href="https://www.591.com.tw/">
-                  <a> 591 </a>
-                </Link>{' '}
+                <a
+                  href="https://www.591.com.tw/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  591
+                </a>{' '}
                 租屋網所有，如果對於網站有任何問題，歡迎來信到{' '}
                 <img src="/static/mail.svg" width="25" height="25" />{' '}
                 <a href="mailto:bivinity.pengzjie@gmail.com">
@@ -58,12 +64,7 @@ function About() {
                   </p>
                   <p className="text-muted">
                     因為每天都要到 591
-                    租屋網去查詢，開始覺得有點麻煩，於是就開始研究如何可以更快的取得我想要的租屋資料。在這個動力驅使之下，我開發了一個軟體，讓我可以方便在{' '}
-                    <img
-                      width="25"
-                      height="25"
-                      src="https://png.icons8.com/windows/96/000000/console.png"
-                    />{' '}
+                    租屋網去查詢，開始覺得有點麻煩，於是就開始研究如何可以更快的取得我想要的租屋資料。在這個動力驅使之下，我開發了一個軟體，讓我可以方便在
                     Terminal
                     執行後，得到一些簡易的文字資料，再選擇我感興趣的資料前往查詢，
                     <mark>本站就是基於這個軟體開發而成的</mark>。
@@ -74,7 +75,7 @@ function About() {
           </div>
         </div>
       </div>
-    </Container>
+    </div>
   );
 }
 
