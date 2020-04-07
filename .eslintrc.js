@@ -26,14 +26,7 @@ module.exports = {
     'sort-imports-es6-autofix'
   ],
   rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        bracketSpacing: true,
-        singleQuote: true,
-        semi: true
-      }
-    ],
+    'prettier/prettier': ['error'],
 
     'import/order': [
       'error',
