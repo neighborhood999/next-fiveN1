@@ -4860,10 +4860,10 @@ react-select@3.1.0:
     react-input-autosize "^2.2.2"
     react-transition-group "^4.3.0"
 
-react-tooltip@4.1.5:
-  version "4.1.5"
-  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-4.1.5.tgz#d1e9eac42b699b45b298e5ddb073f111c8981ad4"
-  integrity sha512-KOlsNxhUEgXcyM6Y2KPijBXhcCTnum7uO017ORnwB4M/rWnwyz/JpCx9+E/2CLTSZCqTmRdeEHryhuVhU2HIkA==
+react-tooltip@4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-4.2.2.tgz#326ec757d966303d3b62cc1a551b54b2c0242ab0"
+  integrity sha512-bd/nQQFQByzqNz1W1Lni3qzvMHqZCuKUNvhApk29WZ5JlEFEsitFp2SxugVM53JQ6hNaocdGwwtCEzk5wQo64g==
   dependencies:
     prop-types "^15.7.2"
     uuid "^7.0.3"
