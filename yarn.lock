@@ -2510,10 +2510,10 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-eslint-config-jiepeng@0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/eslint-config-jiepeng/-/eslint-config-jiepeng-0.0.8.tgz#0fb8d5f3c64fcf20d1287dc8690db1968134d47d"
-  integrity sha512-36B5xy2AeAcJGbrVD4aU7HBrTEki2JhFb8ITseauOZg2dMiyKe9UnkeqthI3n9PZ8yOSr9heIxIZa3GYYVMozw==
+eslint-config-jiepeng@0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/eslint-config-jiepeng/-/eslint-config-jiepeng-0.0.9.tgz#db9f6fb37e7b390e18e29f8bf28a06f4ae02a001"
+  integrity sha512-TGeBgVudV0Qprl5GSRms1YyUxs50uNYYuqwy0WLw8Gvq6VxpMZ5Y3eRX5hWxZtu7QfLyGN9ClCoTeLWqdsb15A==
 
 eslint-config-prettier@6.10.1:
   version "6.10.1"
