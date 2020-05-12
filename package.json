@@ -25,7 +25,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-feather": "2.0.4",
-    "react-hook-form": "5.3.1",
+    "react-hook-form": "5.7.2",
     "react-select": "3.1.0",
     "react-tooltip": "4.2.3",
     "styled-components": "5.1.0",
