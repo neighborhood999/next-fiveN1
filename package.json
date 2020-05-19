@@ -30,7 +30,7 @@
     "react-tooltip": "4.2.3",
     "styled-components": "5.1.0",
     "sweetalert": "2.1.2",
-    "yup": "0.28.3"
+    "yup": "0.29.0"
   },
   "devDependencies": {
     "babel-eslint": "10.1.0",
