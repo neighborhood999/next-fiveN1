@@ -27,7 +27,7 @@
     "react-feather": "2.0.8",
     "react-hook-form": "5.7.2",
     "react-select": "3.1.0",
-    "react-tooltip": "4.2.6",
+    "react-tooltip": "4.2.13",
     "styled-components": "5.1.1",
     "sweetalert": "2.1.2",
     "yup": "0.29.1"
