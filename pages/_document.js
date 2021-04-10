@@ -1,4 +1,4 @@
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 import React from 'react';
 import flush from 'styled-jsx/server';
 
@@ -12,7 +12,7 @@ export default class extends Document {
 
   render() {
     return (
-      <html>
+      <Html>
         <Head>
           <script
             async
@@ -33,7 +33,7 @@ export default class extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }
