@@ -1,51 +1,51 @@
 export const urlJumpOptions = [
-  { label: '台北市', value: 1 },
-  { label: '基隆市', value: 2 },
-  { label: '新北市', value: 3 },
-  { label: '新竹市', value: 4 },
-  { label: '新竹縣', value: 5 },
-  { label: '桃園市', value: 6 },
-  { label: '苗栗縣', value: 7 },
-  { label: '台中市', value: 8 },
-  { label: '彰化縣', value: 10 },
-  { label: '南投縣', value: 11 },
-  { label: '嘉義市', value: 12 },
-  { label: '嘉義縣', value: 13 },
-  { label: '雲林縣', value: 14 },
-  { label: '台南市', value: 15 },
-  { label: '高雄市', value: 17 },
-  { label: '屏東縣', value: 19 },
-  { label: '宜蘭縣', value: 21 },
-  { label: '台東縣', value: 22 },
-  { label: '花蓮縣', value: 23 },
-  { label: '澎湖縣', value: 24 },
-  { label: '金門縣', value: 25 },
-  { label: '連江縣', value: 26 }
+  { label: '台北市', value: '1' },
+  { label: '基隆市', value: '2' },
+  { label: '新北市', value: '3' },
+  { label: '新竹市', value: '4' },
+  { label: '新竹縣', value: '5' },
+  { label: '桃園市', value: '6' },
+  { label: '苗栗縣', value: '7' },
+  { label: '台中市', value: '8' },
+  { label: '彰化縣', value: '10' },
+  { label: '南投縣', value: '11' },
+  { label: '嘉義市', value: '12' },
+  { label: '嘉義縣', value: '13' },
+  { label: '雲林縣', value: '14' },
+  { label: '台南市', value: '15' },
+  { label: '高雄市', value: '17' },
+  { label: '屏東縣', value: '19' },
+  { label: '宜蘭縣', value: '21' },
+  { label: '台東縣', value: '22' },
+  { label: '花蓮縣', value: '23' },
+  { label: '澎湖縣', value: '24' },
+  { label: '金門縣', value: '25' },
+  { label: '連江縣', value: '26' },
 ];
 
 export const kindOptions = [
-  { label: '不限', value: 0 },
-  { label: '整層住家', value: 1 },
-  { label: '獨立套房', value: 2 },
-  { label: '分租套房', value: 3 },
-  { label: '雅房', value: 4 },
-  { label: '車位', value: 8 },
-  { label: '其他', value: 24 }
+  { label: '不限', value: '0' },
+  { label: '整層住家', value: '1' },
+  { label: '獨立套房', value: '2' },
+  { label: '分租套房', value: '3' },
+  { label: '雅房', value: '4' },
+  { label: '車位', value: '8' },
+  { label: '其他', value: '24' },
 ];
 
 export const orderOptions = [
   { label: '時間', value: 'posttime' },
-  { label: '價格', value: 'money' }
+  { label: '價格', value: 'money' },
 ];
 
 export const orderTypeByTimeOptions = [
   { label: '由新到舊', value: 'desc' },
-  { label: '由舊到新', value: 'asc' }
+  { label: '由舊到新', value: 'asc' },
 ];
 
 export const orderTypeByMoneyOptions = [
   { label: '由高到低', value: 'desc' },
-  { label: '由低到高', value: 'asc' }
+  { label: '由低到高', value: 'asc' },
 ];
 
 export const rentPriceOptions = [
@@ -55,35 +55,35 @@ export const rentPriceOptions = [
   { label: '20K - 30K', value: '4' },
   { label: '30K - 40K', value: '5' },
   { label: '40K - 60K', value: '6' },
-  { label: '60K 以上', value: '7' }
+  { label: '60K 以上', value: '7' },
 ];
 
 export const sexOptions = [
-  { label: '不限', value: 0 },
-  { label: '男性', value: 1 },
-  { label: '女性', value: 2 }
+  { label: '不限', value: '0' },
+  { label: '男性', value: '1' },
+  { label: '女性', value: '2' },
 ];
 
 export const hasImageOptions = [
   { label: '不限', value: '' },
-  { label: '是', value: 1 }
+  { label: '是', value: '1' },
 ];
 
 export const notCoverOptions = [
   { label: '否', value: '' },
-  { label: '是', value: 1 }
+  { label: '是', value: '1' },
 ];
 
 export const roleOptions = [
   { label: '不限', value: '' },
-  { label: '是', value: 1 }
+  { label: '是', value: '1' },
 ];
 
 export const shapeOptions = [
   { label: '公寓', value: '1' },
   { label: '電梯大樓', value: '2' },
   { label: '透天厝', value: '3' },
-  { label: '別墅', value: '4' }
+  { label: '別墅', value: '4' },
 ];
 
 export const floorOptions = [
@@ -91,7 +91,7 @@ export const floorOptions = [
   { label: '1 樓', value: '0,1' },
   { label: '2 樓到 6 樓', value: '2,6' },
   { label: '6 樓到 12 樓', value: '6,12' },
-  { label: '12 樓以上', value: '12,' }
+  { label: '12 樓以上', value: '12,' },
 ];
 
 export const areaOptions = [
@@ -100,7 +100,7 @@ export const areaOptions = [
   { label: '10 坪到 20 坪', value: '10,20' },
   { label: '20 坪到 30 坪', value: '20,30' },
   { label: '40 坪到 50 坪', value: '40,50' },
-  { label: '50 坪以上', value: '50,' }
+  { label: '50 坪以上', value: '50,' },
 ];
 
 export const supportOptions = [
@@ -114,7 +114,7 @@ export const supportOptions = [
   { label: '洗衣機', value: 'washer' },
   { label: '床', value: 'bed' },
   { label: '衣櫃', value: 'wardrobe' },
-  { label: '沙發', value: 'sofa' }
+  { label: '沙發', value: 'sofa' },
 ];
 
 export const otherOptions = [
@@ -124,11 +124,11 @@ export const otherOptions = [
   { label: '可以開伙', value: 'cook' },
   { label: '可養寵物', value: 'pet' },
   { label: '鄰近捷運', value: 'tragoods' },
-  { label: '可短期租賃', value: 'lease' }
+  { label: '可短期租賃', value: 'lease' },
 ];
 
-export const sectionListOptions = [
-  {
+export const sectionListOptions = {
+  1: {
     city: '台北市',
     section: [
       { label: '中正區', value: '1' },
@@ -142,10 +142,10 @@ export const sectionListOptions = [
       { label: '北投區', value: '9' },
       { label: '內湖區', value: '10' },
       { label: '南港區', value: '11' },
-      { label: '文山區', value: '12' }
-    ]
+      { label: '文山區', value: '12' },
+    ],
   },
-  {
+  2: {
     city: '基隆市',
     section: [
       { label: '仁愛區', value: '13' },
@@ -154,10 +154,10 @@ export const sectionListOptions = [
       { label: '中山區', value: '16' },
       { label: '安樂區', value: '17' },
       { label: '暖暖區', value: '18' },
-      { label: '七堵區', value: '19' }
-    ]
+      { label: '七堵區', value: '19' },
+    ],
   },
-  {
+  3: {
     city: '新北市',
     section: [
       { label: '萬里區', value: '20' },
@@ -188,18 +188,18 @@ export const sectionListOptions = [
       { label: '八里區', value: '49' },
       { label: '淡水區', value: '50' },
       { label: '三芝區', value: '51' },
-      { label: '石門區', value: '52' }
-    ]
+      { label: '石門區', value: '52' },
+    ],
   },
-  {
+  4: {
     city: '新竹市',
     section: [
       { label: '香山區', value: '370' },
       { label: '東區', value: '371' },
-      { label: '北區', value: '372' }
-    ]
+      { label: '北區', value: '372' },
+    ],
   },
-  {
+  5: {
     city: '新竹縣',
     section: [
       { label: '竹北市', value: '54' },
@@ -214,10 +214,10 @@ export const sectionListOptions = [
       { label: '橫山鄉', value: '63' },
       { label: '尖石鄉', value: '64' },
       { label: '北埔鄉', value: '65' },
-      { label: '峨嵋鄉', value: '66' }
-    ]
+      { label: '峨嵋鄉', value: '66' },
+    ],
   },
-  {
+  6: {
     city: '桃園市',
     section: [
       { label: '中壢區', value: '67' },
@@ -232,10 +232,10 @@ export const sectionListOptions = [
       { label: '大溪區', value: '76' },
       { label: '復興區', value: '77' },
       { label: '大園區', value: '78' },
-      { label: '蘆竹區', value: '79' }
-    ]
+      { label: '蘆竹區', value: '79' },
+    ],
   },
-  {
+  7: {
     city: '苗栗縣',
     section: [
       { label: '竹南鎮', value: '80' },
@@ -255,10 +255,10 @@ export const sectionListOptions = [
       { label: '銅鑼鄉', value: '94' },
       { label: '三義鄉', value: '95' },
       { label: '西湖鄉', value: '96' },
-      { label: '卓蘭鎮', value: '97' }
-    ]
+      { label: '卓蘭鎮', value: '97' },
+    ],
   },
-  {
+  8: {
     city: '台中市',
     section: [
       { label: '中區', value: '98' },
@@ -289,14 +289,10 @@ export const sectionListOptions = [
       { label: '清水區', value: '123' },
       { label: '大甲區', value: '124' },
       { label: '外埔區', value: '125' },
-      { label: '大安區', value: '126' }
-    ]
+      { label: '大安區', value: '126' },
+    ],
   },
-  {
-    city: 'Not Exist',
-    section: []
-  },
-  {
+  10: {
     city: '彰化縣',
     section: [
       { label: '彰化市', value: '127' },
@@ -325,10 +321,9 @@ export const sectionListOptions = [
       { label: '大城鄉', value: '150' },
       { label: '芳苑鄉', value: '151' },
       { label: '二水鄉', value: '152' },
-      { label: '二水鄉', value: '152' }
-    ]
+    ],
   },
-  {
+  11: {
     city: '南投縣',
     section: [
       { label: '南投市', value: '153' },
@@ -343,17 +338,17 @@ export const sectionListOptions = [
       { label: '魚池鄉', value: '162' },
       { label: '信義鄉', value: '163' },
       { label: '竹山鎮', value: '164' },
-      { label: '鹿谷鄉', value: '165' }
-    ]
+      { label: '鹿谷鄉', value: '165' },
+    ],
   },
-  {
+  12: {
     city: '嘉義市',
     section: [
       { label: '西區', value: '373' },
-      { label: '東區', value: '374' }
-    ]
+      { label: '東區', value: '374' },
+    ],
   },
-  {
+  13: {
     city: '嘉義縣',
     section: [
       { label: '番路鄉', value: '167' },
@@ -372,10 +367,10 @@ export const sectionListOptions = [
       { label: '民雄鄉', value: '180' },
       { label: '大林鎮', value: '181' },
       { label: '溪口鄉', value: '182' },
-      { label: '義竹鄉', value: '183' }
-    ]
+      { label: '義竹鄉', value: '183' },
+    ],
   },
-  {
+  14: {
     city: '雲林縣',
     section: [
       { label: '斗南鎮', value: '185' },
@@ -397,10 +392,10 @@ export const sectionListOptions = [
       { label: '水林鄉', value: '201' },
       { label: '口湖鄉', value: '202' },
       { label: '四湖鄉', value: '203' },
-      { label: '元長鄉', value: '204' }
-    ]
+      { label: '元長鄉', value: '204' },
+    ],
   },
-  {
+  15: {
     city: '台南市',
     section: [
       { label: '東區', value: '206' },
@@ -439,14 +434,10 @@ export const sectionListOptions = [
       { label: '大內區', value: '239' },
       { label: '山上區', value: '240' },
       { label: '新市區', value: '241' },
-      { label: '安定區', value: '242' }
-    ]
+      { label: '安定區', value: '242' },
+    ],
   },
-  {
-    city: 'Not Exist',
-    section: []
-  },
-  {
+  17: {
     city: '高雄市',
     section: [
       { label: '新興區', value: '243' },
@@ -462,8 +453,6 @@ export const sectionListOptions = [
       { label: '左營區', value: '253' },
       { label: '仁武區', value: '254' },
       { label: '大社區', value: '255' },
-      { label: '', value: '256' },
-      { label: '', value: '257' },
       { label: '岡山區', value: '258' },
       { label: '路竹區', value: '259' },
       { label: '阿蓮區', value: '260' },
@@ -488,15 +477,12 @@ export const sectionListOptions = [
       { label: '桃源區', value: '279' },
       { label: '那瑪夏區', value: '280' },
       { label: '茂林區', value: '281' },
-      { label: '茄萣區', value: '282' }
-    ]
+      { label: '茄萣區', value: '282' },
+    ],
   },
-  {
-    city: 'Not Exist',
-    section: []
-  },
-  {
+  19: {
     city: '屏東縣',
+    value: 19,
     section: [
       { label: '屏東市', value: '295' },
       { label: '三地門鄉', value: '296' },
@@ -530,14 +516,10 @@ export const sectionListOptions = [
       { label: '車城鄉', value: '324' },
       { label: '牡丹鄉', value: '325' },
       { label: '恆春鎮', value: '326' },
-      { label: '滿州鄉', value: '327' }
-    ]
+      { label: '滿州鄉', value: '327' },
+    ],
   },
-  {
-    city: 'Not Exist',
-    section: []
-  },
-  {
+  21: {
     city: '宜蘭縣',
     section: [
       { label: '宜蘭市', value: '328' },
@@ -551,10 +533,10 @@ export const sectionListOptions = [
       { label: '五結鄉', value: '336' },
       { label: '冬山鄉', value: '337' },
       { label: '蘇澳鎮', value: '338' },
-      { label: '南澳鄉', value: '339' }
-    ]
+      { label: '南澳鄉', value: '339' },
+    ],
   },
-  {
+  22: {
     city: '台東縣',
     section: [
       { label: '台東市', value: '341' },
@@ -572,10 +554,10 @@ export const sectionListOptions = [
       { label: '太麻里鄉', value: '353' },
       { label: '金峰鄉', value: '354' },
       { label: '大武鄉', value: '355' },
-      { label: '達仁鄉', value: '356' }
-    ]
+      { label: '達仁鄉', value: '356' },
+    ],
   },
-  {
+  23: {
     city: '花蓮縣',
     section: [
       { label: '花蓮市', value: '357' },
@@ -590,10 +572,10 @@ export const sectionListOptions = [
       { label: '萬榮鄉', value: '366' },
       { label: '玉里鎮', value: '367' },
       { label: '卓溪鄉', value: '368' },
-      { label: '富里鄉', value: '369' }
-    ]
+      { label: '富里鄉', value: '369' },
+    ],
   },
-  {
+  24: {
     city: '澎湖縣',
     section: [
       { label: '馬公市', value: '283' },
@@ -601,10 +583,10 @@ export const sectionListOptions = [
       { label: '望安鄉', value: '285' },
       { label: '七美鄉', value: '286' },
       { label: '白沙鄉', value: '287' },
-      { label: '湖西鄉', value: '288' }
-    ]
+      { label: '湖西鄉', value: '288' },
+    ],
   },
-  {
+  25: {
     city: '金門縣',
     section: [
       { label: '金沙鎮', value: '289' },
@@ -612,10 +594,10 @@ export const sectionListOptions = [
       { label: '金寧鄉', value: '291' },
       { label: '金城鎮', value: '292' },
       { label: '烈嶼鄉', value: '293' },
-      { label: '烏坵鄉', value: '294' }
-    ]
+      { label: '烏坵鄉', value: '294' },
+    ],
   },
-  {
+  26: {
     city: '連江縣',
     section: [
       { label: '南竿鄉', value: '22' },
@@ -623,7 +605,7 @@ export const sectionListOptions = [
       { label: '莒光鄉', value: '24' },
       { label: '東引鄉', value: '25' },
       { label: '東沙', value: '256' },
-      { label: '南沙', value: '257' }
-    ]
-  }
-];
+      { label: '南沙', value: '257' },
+    ],
+  },
+};

@@ -1,158 +1,112 @@
-import React, { useReducer } from 'react';
-import fetch from 'isomorphic-unfetch';
-import styled, { keyframes } from 'styled-components';
-import swal from 'sweetalert';
+import {
+  Box,
+  Flex,
+  useBreakpointValue,
+  useEventListener,
+  useToast,
+} from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
 
-import RentInfoContext from '../contexts/RentInfoContext';
-import { appendParameters, handleResponse } from '../utils';
+import { createURL } from '../utils';
+import { useFetch, useOptionsForm } from '../hooks';
 
-import Form from './Form';
-import RentInfoList from './RentInfoList';
+import { Banner } from './Banner';
+import { SearchResult } from './SearchResult';
 
-const initialState = {
-  data: [],
-  queryParameters: {},
-  status: {
-    firstSubmit: false,
-    more: false,
-    isLoading: false
-  }
-};
+export function App() {
+  const [page, setNextPage] = useState(0);
+  const [options, setOptions] = useState({});
+  const [scrollTopVisible, setScrollTopVisible] = useState(false);
 
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
+  const toast = useToast();
+  const iconSize = useBreakpointValue({ base: '4xl', md: '5xl' });
+  const {
+    control,
+    formState,
+    setValue,
+    reset,
+    handleSubmit,
+  } = useOptionsForm();
+  const { data, error, reset: resetFetch, isFetching, isSuccess } = useFetch(
+    createURL(page, options),
+    {
+      keepPrevious: true,
+      enable: formState.isSubmitted,
+    }
+  );
 
-  to {
-    transform: rotate(360deg);
-  }
-`;
-const Spinner = styled.div`
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  border: 3px solid rgb(66, 165, 245, 0.2);
-  border-left-color: rgb(66, 165, 245);
-  background: transparent;
-  animation: ${rotate} 1s linear infinite;
-`;
+  useEventListener('scroll', event => {
+    const pageYOffset =
+      event.target instanceof Document
+        ? window.scrollY
+        : event.target.scrollTop;
 
-function reducer(state, action) {
-  switch (action.type) {
-    case 'data':
-      return {
-        ...state,
-        data: action.data
-      };
-
-    case 'query':
-      return {
-        ...state,
-        queryParameters: {
-          ...state.queryParameters,
-          ...action.query
-        }
-      };
-
-    case 'status':
-      return {
-        ...state,
-        status: {
-          ...state.status,
-          ...action.status
-        }
-      };
-
-    default:
-      return initialState;
-  }
-}
-
-function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  const fetchMore = async () => {
-    dispatch({
-      type: 'status',
-      status: { isLoading: true }
-    });
-
-    const updateQueryParameters = {
-      ...state.queryParameters,
-      firstRow: parseInt(state.queryParameters.firstRow) + 30
-    };
-    const url = appendParameters(updateQueryParameters);
-    const nextPage = await fetch(url).then(response => response.json());
-    const { hasData, data: rentInfos } = handleResponse(nextPage);
-
-    if (hasData) {
-      dispatch({
-        type: 'data',
-        data: [...state.data, ...rentInfos]
-      });
-
-      dispatch({
-        type: 'query',
-        query: updateQueryParameters
-      });
-
-      dispatch({
-        type: 'status',
-        status: { isLoading: false }
-      });
+    if (pageYOffset > 200) {
+      setScrollTopVisible(true);
     } else {
-      swal('糟糕！', '沒有更多租屋資料了 😭', 'error');
+      setScrollTopVisible(false);
+    }
+  });
 
-      dispatch({
-        type: 'status',
-        status: { isLoading: false, more: false }
+  useEffect(() => {
+    if (error) {
+      toast({
+        title: '😢 API ERROR! Try again later.',
+        status: 'error',
+        duration: 2000,
+        isClosable: true,
       });
     }
-  };
+  }, [toast, error]);
+
+  function handleForm(formData) {
+    if (formState.isSubmitted) {
+      reset();
+      resetFetch();
+    }
+
+    setOptions(formData);
+  }
+
+  function onNextPage() {
+    setNextPage(p => p + 1);
+  }
 
   return (
-    <RentInfoContext.Provider
-      value={{ ctxState: state, ctxDispatch: dispatch }}
+    <Flex
+      position="relative"
+      direction="column"
+      minHeight="100vh"
+      maxHeight="100%"
     >
-      <div className="container" style={{ minHeight: 'calc(100vh - 20px)' }}>
-        <div className="row">
-          <div className="col-md-12">
-            <Form />
-          </div>
-        </div>
-        <div className="row">
-          {state.status.firstSubmit ? (
-            <div className="col mt-3 mb-3 text-center">
-              <Spinner />
-            </div>
-          ) : (
-            <RentInfoList data={state.data} />
-          )}
-        </div>
-        {state.status.isLoading ? (
-          <div className="pt-3 pb-3 text-center">
-            <Spinner />
-          </div>
-        ) : (
-          state.status.more && (
-            <div className="row">
-              <div className="col-md-4 offset-md-4 pt-3 pb-3">
-                <button
-                  type="button"
-                  className="btn btn-light btn-block"
-                  onClick={fetchMore}
-                >
-                  載入更多房屋資訊
-                </button>
-              </div>
-            </div>
-          )
-        )}
-      </div>
-    </RentInfoContext.Provider>
+      <Banner
+        control={control}
+        setValue={setValue}
+        isFetching={isFetching}
+        onSubmit={handleSubmit(handleForm)}
+        onNextPage={onNextPage}
+      />
+
+      <SearchResult
+        data={data}
+        isFetching={isFetching}
+        isSuccess={isSuccess}
+        onNextPage={onNextPage}
+      />
+
+      <Flex
+        position="fixed"
+        visibility={scrollTopVisible ? 'visible' : 'hidden'}
+        opacity={scrollTopVisible ? 1 : 0}
+        bottom={5}
+        right={5}
+        transition="all 0.2s ease-out"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
+        <Box as="button" fontSize={iconSize}>
+          ⬆️
+        </Box>
+      </Flex>
+    </Flex>
   );
 }
-
-export default App;
