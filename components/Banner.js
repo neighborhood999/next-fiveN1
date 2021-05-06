@@ -132,7 +132,7 @@ export function Banner({ control, isFetching, setValue, onSubmit }) {
       <Button
         type="button"
         position="absolute"
-        bottom={5}
+        bottom={10}
         right={5}
         onClick={() => optionsModal.onOpen()}
       >

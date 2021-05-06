@@ -1,6 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import * as smoothscroll from 'smoothscroll-polyfill';
 
 import { pageView } from '../utils';
 
@@ -18,6 +19,10 @@ function App({ Component, pageProps }) {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
   }, [router.events]);
+
+  useEffect(() => {
+    smoothscroll.polyfill();
+  }, []);
 
   return (
     <ChakraProvider>

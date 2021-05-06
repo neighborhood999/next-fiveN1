@@ -35,11 +35,8 @@ export function App() {
     }
   );
 
-  useEventListener('scroll', event => {
-    const pageYOffset =
-      event.target instanceof Document
-        ? window.scrollY
-        : event.target.scrollTop;
+  useEventListener('scroll', () => {
+    const pageYOffset = window.scrollY;
 
     if (pageYOffset > 200) {
       setScrollTopVisible(true);
