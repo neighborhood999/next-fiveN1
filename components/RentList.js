@@ -18,7 +18,7 @@ function Loading({ height = '100vh', size = 'lg', speed = '1s' }) {
   );
 }
 
-export function RentList({ data, isFetching, onNextPage }) {
+export function RentList({ data, isFetching, hasNextPage, onNextPage }) {
   if (isFetching && data.length === 0) {
     return <Loading />;
   }
@@ -112,6 +112,7 @@ export function RentList({ data, isFetching, onNextPage }) {
 
       <Button
         type="button"
+        visibility={hasNextPage ? 'visible' : 'hidden'}
         isLoading={isFetching}
         onClick={() => onNextPage()}
         width="200px"

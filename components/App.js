@@ -27,13 +27,17 @@ export function App() {
     reset,
     handleSubmit,
   } = useOptionsForm();
-  const { data, error, reset: resetFetch, isFetching, isSuccess } = useFetch(
-    createURL(page, options),
-    {
-      keepPrevious: true,
-      enable: formState.isSubmitted,
-    }
-  );
+  const {
+    data,
+    error,
+    reset: resetFetch,
+    isFetching,
+    isSuccess,
+    totalPages,
+  } = useFetch(createURL(page, options), {
+    keepPrevious: true,
+    enabled: formState.isSubmitted,
+  });
 
   useEventListener('scroll', () => {
     const pageYOffset = window.scrollY;
@@ -55,6 +59,8 @@ export function App() {
       });
     }
   }, [toast, error]);
+
+  const hasNextPage = !(isSuccess && page + 1 >= totalPages);
 
   function handleForm(formData) {
     if (formState.isSubmitted) {
@@ -89,6 +95,7 @@ export function App() {
         isFetching={isFetching}
         isSuccess={isSuccess}
         onNextPage={onNextPage}
+        hasNextPage={hasNextPage}
       />
 
       <Flex

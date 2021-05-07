@@ -11,6 +11,7 @@ const initialState = {
   isFetching: false,
   isSuccess: false,
   keepPrevious: false,
+  totalPages: 0,
   data: [],
   error: null,
 };
@@ -24,14 +25,24 @@ function reduer(state, action) {
         state: FETCHING,
       };
     case FETCHED:
+      if (action.payload) {
+        return {
+          ...state,
+          isFetching: false,
+          isSuccess: true,
+          state: FETCHED,
+          totalPages: action.totalPages,
+          data: state.keepPrevious
+            ? [...state.data, ...action.payload]
+            : action.payload,
+        };
+      }
+
       return {
         ...state,
         isFetching: false,
         isSuccess: true,
         state: FETCHED,
-        data: state.keepPrevious
-          ? [...state.data, ...action.payload]
-          : action.payload,
       };
     case ERROR:
       return {
@@ -47,7 +58,7 @@ function reduer(state, action) {
   }
 }
 
-export function useFetch(url, { enable = false, keepPrevious = false }) {
+export function useFetch(url, { enabled = false, keepPrevious = false }) {
   const cache = useRef({});
   const [state, dispatch] = useReducer(reduer, {
     ...initialState,
@@ -72,19 +83,26 @@ export function useFetch(url, { enable = false, keepPrevious = false }) {
         try {
           const response = await fetch(url).then(res => res.json());
 
-          cache.current[url] = response;
-
-          dispatch({ type: FETCHED, payload: response });
+          if (response) {
+            cache.current[url] = response.data;
+            dispatch({
+              type: FETCHED,
+              totalPages: response.totalPages,
+              payload: response.data,
+            });
+          } else {
+            dispatch({ type: FETCHED });
+          }
         } catch (err) {
           dispatch({ type: ERROR, payload: err.message });
         }
       }
     }
 
-    if (enable) {
+    if (enabled) {
       fetchData();
     }
-  }, [url, enable]);
+  }, [url, enabled]);
 
   return {
     ...state,
