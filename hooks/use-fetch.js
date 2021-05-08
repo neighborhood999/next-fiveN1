@@ -66,8 +66,10 @@ export function useFetch(url, { enabled = false, keepPrevious = false }) {
   });
 
   const reset = useCallback(() => {
-    dispatch({ type: CLEAN_UP });
-  }, []);
+    if (!cache.current[url]) {
+      dispatch({ type: CLEAN_UP });
+    }
+  }, [url]);
 
   useEffect(() => {
     if (!url) {

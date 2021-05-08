@@ -20,13 +20,7 @@ export function App() {
 
   const toast = useToast();
   const iconSize = useBreakpointValue({ base: '4xl', md: '5xl' });
-  const {
-    control,
-    formState,
-    setValue,
-    reset,
-    handleSubmit,
-  } = useOptionsForm();
+  const { control, formState, setValue, handleSubmit } = useOptionsForm();
   const {
     data,
     error,
@@ -64,7 +58,6 @@ export function App() {
 
   function handleForm(formData) {
     if (formState.isSubmitted) {
-      reset();
       resetFetch();
     }
 

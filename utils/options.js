@@ -80,6 +80,7 @@ export const roleOptions = [
 ];
 
 export const shapeOptions = [
+  { label: '不限', value: '' },
   { label: '公寓', value: '1' },
   { label: '電梯大樓', value: '2' },
   { label: '透天厝', value: '3' },
@@ -104,6 +105,7 @@ export const areaOptions = [
 ];
 
 export const supportOptions = [
+  { label: '不限', value: '' },
   { label: '電視', value: 'tv' },
   { label: '冷氣', value: 'cold' },
   { label: '冰箱', value: 'icebox' },
@@ -118,6 +120,7 @@ export const supportOptions = [
 ];
 
 export const otherOptions = [
+  { label: '不限', value: '' },
   { label: '附有車位', value: 'cartplace' },
   { label: '附有電梯', value: 'lift' },
   { label: '附有陽台', value: 'balcony_1' },

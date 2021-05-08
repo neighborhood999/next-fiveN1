@@ -15,9 +15,10 @@ const INITIAL_STATE = {
   rentPrice: '',
   area: '',
   floor: '',
-  shape: [],
-  supportOption: [],
-  other: [],
+  // TODO: can select multiple options
+  shape: '',
+  supportOption: '',
+  other: '',
 };
 
 export function useOptionsForm() {

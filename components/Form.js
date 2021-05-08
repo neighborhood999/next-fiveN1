@@ -11,11 +11,20 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import { Controller } from 'react-hook-form';
+import { Controller, useWatch } from 'react-hook-form';
 
 import * as options from '../utils/options';
 
 export function Form({ control, onClose, onSubmit }) {
+  const watchedOrder = useWatch({
+    control,
+    name: 'order',
+  });
+  const orderByOptions =
+    watchedOrder === 'money'
+      ? options.orderTypeByMoneyOptions
+      : options.orderTypeByTimeOptions;
+
   return (
     <Stack py={4} direction="column" spacing={4}>
       <Heading as="h3" fontSize="x-large">
@@ -35,8 +44,8 @@ export function Form({ control, onClose, onSubmit }) {
           <Controller
             control={control}
             name="kind"
-            render={({ field: { onChange } }) => (
-              <Select onChange={onChange}>
+            render={({ field: { value, onChange } }) => (
+              <Select value={value} onChange={onChange}>
                 {options.kindOptions.map(kind => (
                   <option key={kind.value} value={kind.value}>
                     {kind.label}
@@ -65,8 +74,8 @@ export function Form({ control, onClose, onSubmit }) {
           <Controller
             control={control}
             name="order"
-            render={({ field: { onChange } }) => (
-              <Select onChange={onChange}>
+            render={({ field: { value, onChange } }) => (
+              <Select value={value} onChange={onChange}>
                 {options.orderOptions.map(order => (
                   <option key={order.value} value={order.value}>
                     {order.label}
@@ -83,9 +92,9 @@ export function Form({ control, onClose, onSubmit }) {
           <Controller
             control={control}
             name="orderType"
-            render={({ field: { onChange } }) => (
-              <Select onChange={onChange}>
-                {options.orderTypeByMoneyOptions.map(orderType => (
+            render={({ field: { value, onChange } }) => (
+              <Select value={value} onChange={onChange}>
+                {orderByOptions.map(orderType => (
                   <option key={orderType.value} value={orderType.value}>
                     {orderType.label}
                   </option>
@@ -283,8 +292,8 @@ export function Form({ control, onClose, onSubmit }) {
             <Controller
               control={control}
               name="shape"
-              render={() => (
-                <Select>
+              render={({ field: { value, onChange } }) => (
+                <Select value={value} onChange={onChange}>
                   {options.shapeOptions.map(shape => (
                     <option key={shape.value} value={shape.value}>
                       {shape.label}
@@ -310,8 +319,8 @@ export function Form({ control, onClose, onSubmit }) {
             <Controller
               control={control}
               name="supportOption"
-              render={() => (
-                <Select>
+              render={({ field: { value, onChange } }) => (
+                <Select value={value} onChange={onChange}>
                   {options.supportOptions.map(support => (
                     <option key={support.value} value={support.value}>
                       {support.label}
@@ -338,8 +347,8 @@ export function Form({ control, onClose, onSubmit }) {
           <Controller
             control={control}
             name="other"
-            render={() => (
-              <Select>
+            render={({ field: { value, onChange } }) => (
+              <Select value={value} onChange={onChange}>
                 {options.otherOptions.map(other => (
                   <option key={other.value} value={other.value}>
                     {other.label}
