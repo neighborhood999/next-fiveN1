@@ -1,22 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
+import { Flex, Image, Link, Text } from '@chakra-ui/react';
 
-const Container = styled.footer`
-  height: 20px;
-`;
-
-function Footer() {
+export function Footer() {
   return (
-    <Container>
-      <div className="container">
-        <p className="text-center">
-          <img src="https://img.shields.io/badge/made%20with-%E2%9D%A4-ff69b4.svg?style=flat-square" />{' '}
-          | <img src="/static/github.svg" width="20" height="20" />{' '}
-          <a href="https://github.com/neighborhood999">@neighborhood999</a>
-        </p>
-      </div>
-    </Container>
+    <Flex p={5} justifyContent="center" width="100%">
+      <Image alt="made with love" src="/static/made-with-love.svg" />
+      <Text mx={2}>|</Text>
+      <Image src="/static/github.svg" />
+      <Link
+        ml={2}
+        isExternal
+        href="https://github.com/neighborhood999"
+        _hover={{ textDecoration: 'none' }}
+      >
+        <Text color="#1e8fff">@neighborhood999</Text>
+      </Link>
+    </Flex>
   );
 }
-
-export default Footer;

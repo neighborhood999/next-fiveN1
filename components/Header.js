@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 
-function Header() {
+export function Header() {
   return (
     <Head>
       <title>591 簡易租屋查詢</title>
@@ -9,7 +9,7 @@ function Header() {
       <meta name="description" content="快速查詢 591 租屋網資訊" />
       <meta property="og:title" content="591 簡易租屋查詢" />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://fiven1-quick-look.now.sh/" />
+      <meta property="og:url" content="https://fiven1-quick-look.vercel.app/" />
       <meta
         property="og:image"
         content="https://raw.githubusercontent.com/neighborhood999/fiveN1-rent-scraper/master/logo/fiveN1-rent-scraper-logo.png"
@@ -91,16 +91,6 @@ function Header() {
         content="/static/ms-icon-144x144.png"
       />
       <meta name="theme-color" content="#ffffff" />
-      <link
-        rel="stylesheet"
-        href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css"
-      />
-      <link
-        rel="stylesheet"
-        href="//cdnjs.cloudflare.com/ajax/libs/react-select/1.2.1/react-select.min.css"
-      />
     </Head>
   );
 }
-
-export default Header;
