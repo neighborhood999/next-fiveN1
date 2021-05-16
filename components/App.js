@@ -61,7 +61,10 @@ export function App() {
       resetFetch();
     }
 
-    setOptions(formData);
+    setOptions({
+      ...formData,
+      section: formData.section.join(','),
+    });
   }
 
   function onNextPage() {

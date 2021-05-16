@@ -1,10 +1,8 @@
 import { useForm } from 'react-hook-form';
 
-import { sectionListOptions } from '../utils/options';
-
 const INITIAL_STATE = {
   urlJump: '1',
-  section: sectionListOptions['1'].section[0].value,
+  section: null,
   kind: '0',
   order: 'posttime',
   orderType: 'desc',
