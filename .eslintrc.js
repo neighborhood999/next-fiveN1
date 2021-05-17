@@ -13,5 +13,6 @@ module.exports = {
     'react/jsx-curly-newline': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'import/no-extraneous-dependencies': 'warn',
+    'no-underscore-dangle': 'off',
   },
 };

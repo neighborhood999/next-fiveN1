@@ -1,6 +1,15 @@
 import Link from 'next/link';
 import {
   Button,
+  Checkbox,
+  CheckboxGroup,
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  Flex,
   Grid,
   Modal,
   ModalBody,
@@ -20,12 +29,14 @@ import { sectionListOptions, urlJumpOptions } from '../utils/options';
 import { Form } from './Form';
 
 export function Banner({ control, isFetching, setValue, onSubmit }) {
-  const watchedURLJump = useWatch({
+  const watchedSection = useWatch({
     control,
-    name: 'urlJump',
+    name: 'section',
   });
+  const isSectionEmpty = watchedSection;
 
   const optionsModal = useDisclosure();
+  const drawer = useDisclosure();
   const buttonSize = useBreakpointValue({ base: 'sm', md: 'md' });
   const headingSize = useBreakpointValue({ base: '4xl', md: '5xl', lg: '6xl' });
 
@@ -48,58 +59,60 @@ export function Banner({ control, isFetching, setValue, onSubmit }) {
         <Stack
           as="form"
           direction={{ base: 'column', md: 'row' }}
-          spacing={3}
+          spacing={10}
           onSubmit={onSubmit}
         >
-          <Controller
-            control={control}
-            name="urlJump"
-            render={({ field: { onChange } }) => (
-              <Select
-                width="200px"
-                borderColor="gray.300"
-                onChange={event => {
-                  const cityID = event.currentTarget.value;
+          <Flex>
+            <Controller
+              control={control}
+              name="urlJump"
+              render={({ field: { onChange } }) => (
+                <Select
+                  width="200px"
+                  borderColor="gray.300"
+                  onChange={event => {
+                    const cityID = event.currentTarget.value;
 
-                  onChange(cityID);
-                  setValue(
-                    'section',
-                    sectionListOptions[Number(cityID)].section[0].value
-                  );
-                }}
-                _focus={{ borderWidth: '2px', borderColor: 'blue.400' }}
-              >
-                {urlJumpOptions.map(jump => (
-                  <option key={jump.value} value={jump.value}>
-                    {jump.label}
-                  </option>
-                ))}
-              </Select>
-            )}
-          />
-
-          <Controller
-            control={control}
-            name="section"
-            render={({ field: { onChange } }) => (
-              <Select
-                width="200px"
-                borderColor="gray.300"
-                onChange={onChange}
-                _focus={{ borderWidth: '2px', borderColor: 'blue.400' }}
-              >
-                {sectionListOptions[Number(watchedURLJump)].section.map(
-                  section => (
-                    <option key={section.value} value={section.value}>
-                      {section.label}
+                    onChange(cityID);
+                    setValue('section', null);
+                  }}
+                  _focus={{ borderWidth: '2px', borderColor: 'blue.400' }}
+                >
+                  {urlJumpOptions.map(jump => (
+                    <option key={jump.value} value={jump.value}>
+                      {jump.label}
                     </option>
-                  )
-                )}
-              </Select>
-            )}
-          />
+                  ))}
+                </Select>
+              )}
+            />
 
-          <Button type="submit" isLoading={isFetching}>
+            <Button
+              ml={3}
+              type="button"
+              colorScheme="blue"
+              bgColor="blue.400"
+              onClick={event => {
+                event.preventDefault();
+                drawer.onOpen();
+              }}
+            >
+              選擇鄉鎮{' '}
+              {!isSectionEmpty || watchedSection.length === 0
+                ? null
+                : `(${watchedSection.length})`}
+            </Button>
+          </Flex>
+
+          <Button
+            type="submit"
+            isLoading={isFetching}
+            border="2px solid"
+            borderColor="transparent"
+            _hover={{
+              borderColor: 'black',
+            }}
+          >
             搜尋
           </Button>
         </Stack>
@@ -147,6 +160,8 @@ export function Banner({ control, isFetching, setValue, onSubmit }) {
         modal={optionsModal}
         onSubmit={onSubmit}
       />
+
+      <SectionDrawer control={control} drawer={drawer} />
     </Grid>
   );
 }
@@ -171,5 +186,43 @@ function OptionsModal({ control, modal, onSubmit }) {
         </ModalContent>
       </ModalOverlay>
     </Modal>
+  );
+}
+
+function SectionDrawer({ control, drawer }) {
+  const watchedURLJump = useWatch({
+    control,
+    name: 'urlJump',
+  });
+
+  return (
+    <Drawer isOpen={drawer.isOpen} placement="right" onClose={drawer.onClose}>
+      <DrawerOverlay />
+      <DrawerContent>
+        <DrawerHeader>請選擇鄉鎮</DrawerHeader>
+        <DrawerBody>
+          <Grid templateColumns="repeat(3, 1fr)" width="100%">
+            <Controller
+              control={control}
+              name="section"
+              render={({ field: { value, onChange } }) => (
+                <CheckboxGroup defaultValue={value} onChange={v => onChange(v)}>
+                  {sectionListOptions[Number(watchedURLJump)].section.map(
+                    section => (
+                      <Checkbox key={section.value} value={section.value}>
+                        {section.label}
+                      </Checkbox>
+                    )
+                  )}
+                </CheckboxGroup>
+              )}
+            />
+          </Grid>
+        </DrawerBody>
+        <DrawerFooter>
+          <Button onClick={drawer.onClose}>完成</Button>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
   );
 }

@@ -6,14 +6,13 @@ import { RentList } from './RentList';
 export function SearchResult({ data, isSuccess, ...props }) {
   const ref = useRef();
   useEffect(() => {
-    if (isSuccess) {
+    if (data.length > 0 && isSuccess) {
       ref?.current.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
       });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isSuccess]);
+  }, [data, isSuccess]);
 
   return (
     <Flex ref={ref} direction="column" width="100%">
