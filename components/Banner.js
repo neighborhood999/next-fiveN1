@@ -97,7 +97,10 @@ export function Banner({ control, isFetching, setValue, onSubmit }) {
                 drawer.onOpen();
               }}
             >
-              選擇鄉鎮 {!isSectionEmpty ? null : `(${watchedSection?.length})`}
+              選擇鄉鎮{' '}
+              {!isSectionEmpty || watchedSection.length === 0
+                ? null
+                : `(${watchedSection.length})`}
             </Button>
           </Flex>
 

@@ -23,6 +23,7 @@ function reduer(state, action) {
         ...state,
         isFetching: true,
         state: FETCHING,
+        data: [],
       };
     case FETCHED:
       if (action.payload) {
