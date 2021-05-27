@@ -6,13 +6,13 @@ import { RentList } from './RentList';
 export function SearchResult({ data, isSuccess, ...props }) {
   const ref = useRef();
   useEffect(() => {
-    if (data.length > 0 && isSuccess) {
+    if (isSuccess) {
       ref?.current.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
       });
     }
-  }, [data, isSuccess]);
+  }, [isSuccess]);
 
   return (
     <Flex ref={ref} direction="column" width="100%">

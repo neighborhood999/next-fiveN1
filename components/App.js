@@ -7,6 +7,7 @@ import {
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
+import { INITIAL_STATE } from '../hooks/use-options-form';
 import { createURL } from '../utils';
 import { useFetch, useOptionsForm } from '../hooks';
 
@@ -15,8 +16,9 @@ import { SearchResult } from './SearchResult';
 
 export function App() {
   const [page, setNextPage] = useState(0);
-  const [options, setOptions] = useState({});
+  const [options, setOptions] = useState(INITIAL_STATE);
   const [scrollTopVisible, setScrollTopVisible] = useState(false);
+  const [URL, setURL] = useState(createURL(0, options));
 
   const toast = useToast();
   const iconSize = useBreakpointValue({ base: '4xl', md: '5xl' });
@@ -28,10 +30,29 @@ export function App() {
     isFetching,
     isSuccess,
     totalPages,
-  } = useFetch(createURL(page, options), {
+  } = useFetch(URL, {
     keepPrevious: true,
     enabled: formState.isSubmitted,
   });
+
+  const hasNextPage = !(isSuccess && page + 1 >= totalPages);
+
+  function handleForm(formData) {
+    if (formState.isSubmitted) {
+      // FIXME:
+      const nextURL = createURL(page, formData);
+
+      if (URL !== nextURL) {
+        resetFetch();
+      }
+    }
+
+    setOptions(formData);
+  }
+
+  function onNextPage() {
+    setNextPage(p => p + 1);
+  }
 
   useEventListener('scroll', () => {
     const pageYOffset = window.scrollY;
@@ -54,22 +75,10 @@ export function App() {
     }
   }, [toast, error]);
 
-  const hasNextPage = !(isSuccess && page + 1 >= totalPages);
-
-  function handleForm(formData) {
-    if (formState.isSubmitted) {
-      resetFetch();
-    }
-
-    setOptions({
-      ...formData,
-      section: formData.section.join(','),
-    });
-  }
-
-  function onNextPage() {
-    setNextPage(p => p + 1);
-  }
+  useEffect(() => {
+    const nextURL = createURL(page, options);
+    setURL(nextURL);
+  }, [page, options]);
 
   return (
     <Flex
