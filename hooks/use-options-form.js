@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 
-const INITIAL_STATE = {
+export const INITIAL_STATE = {
   urlJump: '1',
   section: null,
   kind: '0',

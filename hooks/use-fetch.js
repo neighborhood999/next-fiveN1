@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useReducer, useRef } from 'react';
+import { useEffect, useReducer, useRef } from 'react';
 
 const IDLE = 'IDLE';
 const FETCHING = 'FETCHING';
@@ -22,8 +22,8 @@ function reduer(state, action) {
       return {
         ...state,
         isFetching: true,
+        keepPrevious: true,
         state: FETCHING,
-        data: [],
       };
     case FETCHED:
       if (action.payload) {
@@ -53,7 +53,15 @@ function reduer(state, action) {
         error: action.payload,
       };
     case CLEAN_UP:
-      return initialState;
+      return {
+        state: CLEAN_UP,
+        isFetching: false,
+        isSuccess: false,
+        keepPrevious: false,
+        totalPages: 0,
+        data: [],
+        error: null,
+      };
     default:
       return state;
   }
@@ -66,11 +74,9 @@ export function useFetch(url, { enabled = false, keepPrevious = false }) {
     keepPrevious,
   });
 
-  const reset = useCallback(() => {
-    if (!cache.current[url]) {
-      dispatch({ type: CLEAN_UP });
-    }
-  }, [url]);
+  function reset() {
+    dispatch({ type: CLEAN_UP });
+  }
 
   useEffect(() => {
     if (!url) {
