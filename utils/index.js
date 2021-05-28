@@ -3,7 +3,11 @@ export function createURL(page, queryParameters) {
   const firstRow = page * 30;
   const values = { ...queryParameters, firstRow };
 
-  Object.keys(values).forEach(key => url.searchParams.append(key, values[key]));
+  Object.keys(values).forEach(key => {
+    if (values[key]) {
+      url.searchParams.append(key, values[key]);
+    }
+  });
 
   return url.toString();
 }

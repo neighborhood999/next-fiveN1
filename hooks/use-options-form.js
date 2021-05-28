@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 
-const INITIAL_STATE = {
+export const INITIAL_OPTIONS = {
   urlJump: '1',
   section: null,
   kind: '0',
@@ -21,7 +21,7 @@ const INITIAL_STATE = {
 
 export function useOptionsForm() {
   const form = useForm({
-    defaultValues: INITIAL_STATE,
+    defaultValues: INITIAL_OPTIONS,
   });
 
   return form;
