@@ -7,7 +7,7 @@ import {
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
-import { INITIAL_STATE } from '../hooks/use-options-form';
+import { INITIAL_OPTIONS } from '../hooks/use-options-form';
 import { createURL } from '../utils';
 import { useFetch, useOptionsForm } from '../hooks';
 
@@ -16,7 +16,7 @@ import { SearchResult } from './SearchResult';
 
 export function App() {
   const [page, setNextPage] = useState(0);
-  const [options, setOptions] = useState(INITIAL_STATE);
+  const [options, setOptions] = useState(INITIAL_OPTIONS);
   const [scrollTopVisible, setScrollTopVisible] = useState(false);
   const [URL, setURL] = useState(createURL(0, options));
 
