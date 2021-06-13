@@ -5,7 +5,8 @@
     "dev": "next",
     "build": "next build",
     "lint": "eslint . --ext=js",
-    "lint:fix": "npm run lint --fix"
+    "lint:fix": "npm run lint --fix",
+    "prepare": "husky install"
   },
   "author": "Peng Jie <im@jiepeng.me> (https://github.com/neighborhood999)",
   "lint-staged": {
@@ -13,29 +14,24 @@
       "npm run lint:fix"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.13",
-    "@chakra-ui/react": "1.6.1",
+    "@chakra-ui/react": "1.6.3",
     "@emotion/react": "11.4.0",
     "@emotion/styled": "11.3.0",
     "framer-motion": "4.1.16",
-    "next": "10.2.0",
+    "next": "10.2.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-hook-form": "7.6.0",
+    "react-hook-form": "7.8.4",
     "smoothscroll-polyfill": "0.4.4"
   },
   "devDependencies": {
     "@hookform/devtools": "3.1.0",
     "@jiepeng/eslint-config-jiepeng-react": "0.0.26",
     "eslint": "7.24.0",
-    "husky": "4.2.5",
-    "lint-staged": "10.2.7",
+    "husky": "6.0.0",
+    "lint-staged": "11.0.0",
     "prettier": "2.2.1"
   },
   "engines": {
