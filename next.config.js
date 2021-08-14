@@ -6,7 +6,4 @@ module.exports = {
     API_URL,
     TRACKING_ID,
   },
-  future: {
-    webpack5: true,
-  },
 };
