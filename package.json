@@ -15,24 +15,25 @@
     ]
   },
   "dependencies": {
-    "@chakra-ui/icons": "^1.0.13",
-    "@chakra-ui/react": "1.6.3",
-    "@emotion/react": "11.4.0",
+    "@chakra-ui/icons": "^1.0.15",
+    "@chakra-ui/react": "1.6.6",
+    "@emotion/react": "11.4.1",
     "@emotion/styled": "11.3.0",
-    "framer-motion": "4.1.16",
-    "next": "10.2.3",
+    "framer-motion": "4.1.17",
+    "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-hook-form": "7.8.4",
+    "react-hook-form": "7.12.2",
     "smoothscroll-polyfill": "0.4.4"
   },
   "devDependencies": {
     "@hookform/devtools": "3.1.0",
     "@jiepeng/eslint-config-jiepeng-react": "0.0.26",
     "eslint": "7.24.0",
-    "husky": "6.0.0",
-    "lint-staged": "11.0.0",
-    "prettier": "2.2.1"
+    "eslint-config-next": "11.0.1",
+    "husky": "7.0.1",
+    "lint-staged": "11.1.2",
+    "prettier": "2.3.2"
   },
   "engines": {
     "node": ">=14"

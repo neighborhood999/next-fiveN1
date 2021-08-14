@@ -5,13 +5,13 @@ The [fiven1-quick-look.vercel.app](https://fiven1-quick-look.vercel.app/) source
 ## Installation
 
 ```shell
-$ yarn install
+$ npm install // pnpm install
 ```
 
 ## Usage
 
 ```shell
-$ yarn run dev
+$ make dev
 ```
 
 ## Configuration
