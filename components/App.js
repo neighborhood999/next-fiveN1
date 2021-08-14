@@ -19,6 +19,7 @@ export function App() {
   const [options, setOptions] = useState(INITIAL_OPTIONS);
   const [scrollTopVisible, setScrollTopVisible] = useState(false);
   const [URL, setURL] = useState(createURL(0, options));
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const toast = useToast();
   const iconSize = useBreakpointValue({ base: '4xl', md: '5xl' });
@@ -32,13 +33,21 @@ export function App() {
     totalPages,
   } = useFetch(URL, {
     keepPrevious: true,
-    enabled: formState.isSubmitted,
+    enabled: isSubmitted,
   });
 
   const hasNextPage = !(isSuccess && page + 1 >= totalPages);
 
-  function handleForm(formData) {
+  useEffect(() => {
     if (formState.isSubmitted) {
+      setIsSubmitted(true);
+    } else {
+      setIsSubmitted(false);
+    }
+  }, [formState]);
+
+  function handleForm(formData) {
+    if (isSubmitted) {
       // FIXME:
       const nextURL = createURL(page, formData);
 

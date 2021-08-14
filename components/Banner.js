@@ -66,10 +66,11 @@ export function Banner({ control, isFetching, setValue, onSubmit }) {
             <Controller
               control={control}
               name="urlJump"
-              render={({ field: { onChange } }) => (
+              render={({ field: { onChange, value } }) => (
                 <Select
                   width="200px"
                   borderColor="gray.300"
+                  value={value}
                   onChange={event => {
                     const cityID = event.currentTarget.value;
 
